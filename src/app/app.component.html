@@ -1,0 +1,23 @@
+<h1 class="h1">Bestsellers</h1>
+<div class="divs">
+  <app-paint appToolTip
+    *ngFor="let p of interBest"
+  [paint]="p">
+  </app-paint>
+</div>
+
+<h1 class="h1">Top_Ranking</h1>
+<div class="divs">
+  <app-paint
+    *ngFor="let p of topPaints"
+    [paint]="p">
+  </app-paint>
+</div>
+
+<h1 class="h1">Most_Popular</h1>
+<div class="divs">
+  <app-paint
+    *ngFor="let p of mostPaints"
+    [paint]="p">
+  </app-paint>
+</div>

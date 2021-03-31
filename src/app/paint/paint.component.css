@@ -1,0 +1,12 @@
+.paint {
+  max-height: 300px;
+}
+
+.div {
+  width: 250px;
+  margin: 0 auto;
+  align-content: center;
+  text-align: center;
+  outline: 2px solid #000;
+  border-radius: 10px;
+}
