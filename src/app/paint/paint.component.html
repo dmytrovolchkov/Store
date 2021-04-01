@@ -1,12 +1,15 @@
-<div class="div">
-  <img class="paint"
-       src="{{paint.imageUrl}}"
-       alt="">
-  <h2>" {{paint.title}} "</h2>
-      by {{paint.author}}
-    <br>price: {{paint.price}} uah
-    <br>year: {{paint.year}}
-    <br>sells: {{paint.sells}}
-    <br>Top {{paint.rating}}
-</div>
-
+<mat-card class="example-card" align="center">
+  <mat-card-header>
+    <mat-card-title>" {{paint.title}} "</mat-card-title>
+    <mat-card-subtitle>by {{paint.author}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{paint.imageUrl}}" alt="" class="paint">
+  <mat-card-content>
+    <p>
+      <br>price: {{paint.price}} uah
+      <br>year: {{paint.year}}
+      <br>sells: {{paint.sells}}
+      <br>Top {{paint.rating}}
+    </p>
+  </mat-card-content>
+</mat-card>

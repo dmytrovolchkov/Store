@@ -1,21 +1,23 @@
-<h1 class="h1">Bestsellers</h1>
-<div class="divs">
-  <app-paint appToolTip
+<app-header [deviceXs]="deviceXs"></app-header>
+<h1 class="mat-typography h1" align="center" tooltip='Bestsellers' delay="500">Bestsellers</h1>
+
+<div fxLayout="row" fxLayoutAlign="space-evenly start">
+  <app-paint
     *ngFor="let p of interBest"
   [paint]="p">
   </app-paint>
 </div>
 
-<h1 class="h1">Top_Ranking</h1>
-<div class="divs">
+<h1 class="mat-typography h1" align="center" tooltip='Top Ranking' delay="500">Top Ranking</h1>
+<div fxLayout="row" fxLayoutAlign="space-evenly start">
   <app-paint
     *ngFor="let p of topPaints"
     [paint]="p">
   </app-paint>
 </div>
 
-<h1 class="h1">Most_Popular</h1>
-<div class="divs">
+<h1 class="mat-typography h1" align="center" tooltip='Most Popular' delay="500">Most Popular</h1>
+<div fxLayout="row" fxLayoutAlign="space-evenly start">
   <app-paint
     *ngFor="let p of mostPaints"
     [paint]="p">

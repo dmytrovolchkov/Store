@@ -10,7 +10,6 @@ import {Paint} from '../app.component';
 export class PaintComponent implements OnInit {
 
   @Input() paint: Paint;
-
   constructor() { }
 
   ngOnInit(): void {
