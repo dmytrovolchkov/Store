@@ -1,21 +1,33 @@
 <mat-toolbar>
   <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div>
-      <button mat-button>
+    <div [appTooltip]="'appTool'"
+      [delay]="500">
+      <button mat-flat-button>
         <mat-icon>home</mat-icon>
         Home</button>
-      <button mat-button>Button2</button>
-      <button mat-button>Button3</button>
+      <button mat-flat-button>Button2</button>
+      <button mat-flat-button>Button3</button>
     </div>
     <div>
-      <button mat-button>
+      <button mat-flat-button>
         <mat-icon>shopping_cart</mat-icon>
-        <span *ngIf="!deviceXs">Cart</span>
+        <span *ngIf="!deviceXs">Cart {{count.counter}}</span>
       </button>
     </div>
   </mat-toolbar-row>
+  <mat-toolbar-row fxLayoutAlign="start center">
+  <form class="example-form">
+    <mat-form-field class="example-full-width"  fxFlexOffset="5">
+      <mat-label>Phone number</mat-label>
+      <input (keyup.enter)="onInput($event)"
+      matInput placeholder="+380 (XX) XXX-XX-XX">
+    </mat-form-field>
+  </form>
+    <span fxFlexOffset="5">{{inputPhone | phonePipe}}</span>
+
+  </mat-toolbar-row>
   <mat-toolbar-row *ngIf="deviceXs">
-    <span>Custom Toolbar2</span>
+    <span>Custom Toolbar 2</span>
   </mat-toolbar-row>
 </mat-toolbar>
 

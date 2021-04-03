@@ -1,10 +1,10 @@
 import { Directive, Input, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[tooltip]'
+  selector: '[appTooltip]',
 })
 export class ToolTipDirective {
-  @Input('tooltip') tooltipTitle: string;
+  @Input('appTooltip') tooltipTitle: string;
   @Input() delay: number;
   tooltip: HTMLElement;
   offset = 10;

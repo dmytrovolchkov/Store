@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
+import {CounterService} from './services/counter.service';
 
 export interface Paint {
   imageUrl: string;
@@ -89,9 +90,9 @@ export class AppComponent implements OnInit, OnDestroy{
   interBest = this.bestPaints.slice(0, 3);
   private n = 6;
 
-  constructor(public mediaObserver: MediaObserver) {
+  constructor(public mediaObserver: MediaObserver, public appCounter: CounterService) {
 
-    const intervalStream$ = interval(3000)
+    interval(3000)
       .pipe(
         map(v => {
             for (let i = 0; i < this.bestPaints.length / 2; i++) {

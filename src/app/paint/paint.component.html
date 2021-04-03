@@ -3,7 +3,8 @@
     <mat-card-title>" {{paint.title}} "</mat-card-title>
     <mat-card-subtitle>by {{paint.author}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="{{paint.imageUrl}}" alt="" class="paint">
+  <img mat-card-image
+       src="{{paint.imageUrl}}" alt="" class="paint">
   <mat-card-content>
     <p>
       <br>price: {{paint.price}} uah
@@ -11,5 +12,10 @@
       <br>sells: {{paint.sells}}
       <br>Top {{paint.rating}}
     </p>
+    <button mat-raised-button
+            (click)="onBuy();appCount.increase()"
+            onclick="this.className = 'hide'"
+    >Buy now</button>
+    <div>{{bought}}</div>
   </mat-card-content>
 </mat-card>
