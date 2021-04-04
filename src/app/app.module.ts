@@ -4,7 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { PaintComponent } from './paint/paint.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -14,6 +14,10 @@ import { MatCardModule } from '@angular/material/card';
 import { PhonePipePipe } from './pipes/phone-pipe.pipe';
 import { MatInputModule } from '@angular/material/input';
 import { ToolTipDirective } from './directives/tool-tip.directive';
+import { FormComponent } from './form/form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,7 @@ import { ToolTipDirective } from './directives/tool-tip.directive';
     ToolTipDirective,
     HeaderComponent,
     PhonePipePipe,
+    FormComponent,
 
   ],
   imports: [
@@ -34,9 +39,12 @@ import { ToolTipDirective } from './directives/tool-tip.directive';
     MatIconModule,
     MatCardModule,
     MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatOptionModule,
+    MatSelectModule,
   ],
   providers: [],
-  bootstrap: [AppComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
