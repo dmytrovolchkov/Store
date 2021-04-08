@@ -70,10 +70,13 @@ export class ItemListService {
       },
     ];
 
-  getBest$: Observable<Paint[]> = of (this.paints.sort((a, b) => (a.sells > b.sells ? -1 : 1)));
-
-  getTop$: Observable<Paint[]> = of ((this.paints.slice(0)).sort((a, b) => (a.rating < b.rating ? -1 : 1)));
-
-  getMost$: Observable<Paint[]> = of ((this.paints.slice(0)).sort((a, b) => (a.popular > b.popular ? -1 : 1)));
-
+  Best$(): any {
+    return of(this.paints.sort((a, b) => (a.sells > b.sells ? -1 : 1)));
+  }
+  Top$(): any {
+    return of ((this.paints.slice(0)).sort((a, b) => (a.rating < b.rating ? -1 : 1)));
+  }
+  Most$(): any {
+    return of ((this.paints.slice(0)).sort((a, b) => (a.popular > b.popular ? -1 : 1)));
+  }
 }

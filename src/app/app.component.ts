@@ -29,15 +29,15 @@ export class AppComponent implements OnInit, OnDestroy {
   topPaints: Paint[];
   mostPaints: Paint[];
 
-  constructor(public mediaObserver: MediaObserver, public appCounter: CounterService, public getItem: ItemListService) {
+  constructor(public mediaObserver: MediaObserver, public appCounter: CounterService, public Items: ItemListService) {
 
-    getItem.getBest$.subscribe( paints => {
+    Items.Best$().subscribe ( paints => {
       this.bestPaints = paints; });
     this.interBest = this.bestPaints.slice(0, 3);
-    getItem.getTop$.subscribe( paints => {
+    Items.Top$().subscribe( paints => {
       this.topPaints = paints; });
 
-    getItem.getMost$.subscribe( paints => {
+    Items.Most$().subscribe( paints => {
       this.mostPaints = paints; });
 
     interval(3000)

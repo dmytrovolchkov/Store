@@ -31,12 +31,19 @@ export class FormComponent implements OnInit {
       return 'You must enter a value';
     }
     return this.email.hasError('email') ? 'Not a valid email' : '';
+    if (this.score.hasError('required')) {
+      return 'You must type a score';
+    }
   }
 
   submit(): any {
-    console.log('Form ', this.form);
-    const formData = {...this.form.value};
+    if (this.form.valid) {
+      console.log('Form ', this.form);
+      const formData = {...this.form.value};
 
-    console.log('Form data ', formData);
+      console.log('Form data ', formData);
+
+      this.form.reset();
+    }
   }
 }
