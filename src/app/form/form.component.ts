@@ -9,40 +9,35 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class FormComponent implements OnInit {
 
   form: FormGroup;
-  email: FormControl;
-  name: FormControl;
-  score: FormControl;
 
   ngOnInit(): void {
-    this.form = new FormGroup({});
-    this.name = new FormControl('',
-      [Validators.required,
-                    Validators.minLength(3),
-                    Validators.maxLength(20)]);
-    this.email = new FormControl('',
-      [Validators.required,
-                    Validators.email]);
-    this.score = new FormControl('',
-                      Validators.required);
+    this.form = new FormGroup({
+      name: new FormControl('',
+        [Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(20)]),
+      email: new FormControl('',
+        [Validators.required,
+          Validators.email]),
+      score: new FormControl('',
+        Validators.required),
+      comment: new FormControl('',
+        Validators.maxLength(1000))
+    });
   }
 
   getErrorMessage(): any {
-    if (this.email.hasError('required')) {
+    if (this.form.get('email').hasError('required')) {
       return 'You must enter a value';
     }
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-    if (this.score.hasError('required')) {
-      return 'You must type a score';
-    }
+    return this.form.get('email').hasError('email') ? 'Not a valid email' : '';
   }
 
   submit(): any {
     if (this.form.valid) {
       console.log('Form ', this.form);
       const formData = {...this.form.value};
-
       console.log('Form data ', formData);
-
       this.form.reset();
     }
   }

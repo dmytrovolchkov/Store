@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Paint } from '../app.component';
-import {Observable, of} from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

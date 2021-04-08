@@ -23,7 +23,7 @@ export interface Paint {
 })
 
 export class AppComponent implements OnInit, OnDestroy {
-
+  inputPhone = '380XXXXXXXXX';
   bestPaints: Paint[];
   interBest: Paint[];
   topPaints: Paint[];
@@ -62,6 +62,12 @@ deviceXs: boolean;
   }
   ngOnDestroy(): any {
     this.mediaSub.unsubscribe();
+  }
+
+
+  onInput(event?): any {
+    this.inputPhone = event.target.value;
+    event.target.value = '';
   }
 
 }

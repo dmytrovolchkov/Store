@@ -7,7 +7,7 @@
            #input minlength="3"
            maxlength="20"
            placeholder="Name"
-           [formControl]="name" required>
+           formControlName="name" required>
     <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
   </mat-form-field>
   </p>
@@ -15,30 +15,33 @@
   <mat-form-field appearance="fill">
     <mat-label>Enter your email</mat-label>
     <input matInput placeholder="pat@example.com"
-           [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+           formControlName="email" required>
+    <mat-error *ngIf="form.get('email').invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
   </p>
   <p>
   <mat-form-field appearance="fill">
     <mat-label>Enter score</mat-label>
     <mat-select
-      [formControl]="score" required>
-      <mat-option value="option1">1</mat-option>
-      <mat-option value="option2">2</mat-option>
-      <mat-option value="option3">3</mat-option>
-      <mat-option value="option4">4</mat-option>
-      <mat-option value="option5">5</mat-option>
+      formControlName="score" required>
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+      <mat-option value="3">3</mat-option>
+      <mat-option value="4">4</mat-option>
+      <mat-option value="5">5</mat-option>
     </mat-select>
     <mat-hint align="end">From 1 to 5</mat-hint>
   </mat-form-field>
   </p>
   <p>
-    <mat-form-field appearance="fill">
+    <mat-form-field hintLabel="Max 1000 characters" appearance="fill">
       <mat-label>Enter your comment</mat-label>
       <label>
-        <textarea matInput></textarea>
+        <textarea matInput
+                  #text maxlength="1000"
+                  formControlName="comment"></textarea>
       </label>
+      <mat-hint align="end">{{text.value?.length || 0}}/1000</mat-hint>
     </mat-form-field>
   </p>
   <p>
@@ -46,4 +49,6 @@
             type="submit"
             [disabled]="form.invalid || form.pending">Submit form</button>
   </p>
+
 </form>
+

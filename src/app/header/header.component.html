@@ -1,13 +1,18 @@
 <mat-toolbar>
-  <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div [appTooltip]="'appTool'"
-      [delay]="500">
+  <mat-toolbar-row
+    class="white-line"
+    fxLayout="row"
+    fxLayoutAlign="end center">
+    <div [appTooltip]="' items in the basket'">
       <button mat-flat-button>
         <mat-icon>home</mat-icon>
         Home</button>
-      <button mat-flat-button>Button2</button>
-      <button mat-flat-button>Button3</button>
+      <button mat-flat-button>About us</button>
+      <button mat-flat-button>Careers</button>
     </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="white-line"
+                   fxLayoutAlign="end center">
     <div>
       <button mat-flat-button>
         <mat-icon>shopping_cart</mat-icon>
@@ -15,19 +20,42 @@
       </button>
     </div>
   </mat-toolbar-row>
-  <mat-toolbar-row fxLayoutAlign="start center">
-  <form class="example-form">
-    <mat-form-field class="example-full-width"  fxFlexOffset="5">
-      <mat-label>Phone number</mat-label>
-      <input (keyup.enter)="onInput($event)"
-      matInput placeholder="+380 (XX) XXX-XX-XX">
-    </mat-form-field>
-  </form>
-    <span fxFlexOffset="5">{{inputPhone | phonePipe}}</span>
-
-  </mat-toolbar-row>
-  <mat-toolbar-row *ngIf="deviceXs">
-    <span>Custom Toolbar 2</span>
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="start center">
+    <button mat-button [matMenuTriggerFor]="menu">{{category.category[0]}}
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu">{{category.category[1]}}
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu">{{category.category[2]}}
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu">{{category.category[3]}}
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu">{{category.category[4]}}
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
 

@@ -5,7 +5,6 @@ import { Directive, Input, ElementRef, HostListener, Renderer2 } from '@angular/
 })
 export class ToolTipDirective {
   @Input('appTooltip') tooltipTitle: string;
-  @Input() delay: number;
   tooltip: HTMLElement;
   offset = 10;
 
@@ -30,7 +29,7 @@ export class ToolTipDirective {
     window.setTimeout(() => {
       this.renderer.removeChild(document.body, this.tooltip);
       this.tooltip = null;
-    }, this.delay);
+    });
   }
 
   create(): any {
@@ -43,7 +42,6 @@ export class ToolTipDirective {
     this.renderer.appendChild(document.body, this.tooltip);
 
     this.renderer.addClass(this.tooltip, 'ng-tooltip');
-    this.renderer.setStyle(this.tooltip, 'transition', `opacity ${this.delay}ms`);
   }
 
   setPosition(): any {

@@ -13,7 +13,6 @@ export class PaintComponent implements OnInit {
   bought = '';
   @Input() paint: Paint;
 
-
   ngOnInit(): void {
   }
   onBuy(): any {

@@ -1,11 +1,24 @@
 <app-header [deviceXs]="deviceXs"></app-header>
 <app-form></app-form>
+
+<div fxLayoutAlign="start center">
+  <form class="example-form">
+    <mat-form-field class="example-full-width"  fxFlexOffset="5">
+      <mat-label>Phone number</mat-label>
+      <input (keyup.enter)="onInput($event)"
+             matInput placeholder="+380 (XX) XXX-XX-XX">
+    </mat-form-field>
+  </form>
+  <span fxFlexOffset="5">{{inputPhone | phonePipe}}</span>
+</div>
+
+
 <h1 class="mat-typography h1"
     align="center"
-    [appTooltip]="appCounter.counter+' items in the basket'"
-    delay="500">Bestsellers</h1>
+    [appTooltip]="appCounter.counter+' items in the basket'">
+  Bestsellers</h1>
 
-<div fxLayout="row" fxLayoutAlign="space-evenly start">
+<div fxLayout="row" fxLayoutAlign="space-evenly stretch">
   <app-paint
     *ngFor="let p of interBest"
   [paint]="p">
@@ -13,7 +26,7 @@
 </div>
 
 <h1 class="mat-typography h1" align="center">Top Ranking</h1>
-<div fxLayout="row" fxLayoutAlign="space-evenly start">
+<div fxLayout="row" fxLayoutAlign="space-evenly stretch">
   <app-paint
     *ngFor="let p of topPaints"
     [paint]="p">
@@ -21,7 +34,7 @@
 </div>
 
 <h1 class="mat-typography h1" align="center">Most Popular</h1>
-<div fxLayout="row" fxLayoutAlign="space-evenly start">
+<div fxLayout="row" fxLayoutAlign="space-evenly stretch">
   <app-paint
     *ngFor="let p of mostPaints"
     [paint]="p">
