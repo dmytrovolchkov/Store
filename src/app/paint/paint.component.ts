@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Paint } from '../app.component';
+import { Paint} from '../services/item-list.service';
 import { CounterService } from '../services/counter.service';
 
 @Component({

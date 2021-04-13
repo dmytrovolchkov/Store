@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <mat-card class="form" align="center">
   <img mat-card-image
        src="{{paint.imageUrl}}" alt="" class="paint">
@@ -7,11 +8,14 @@
   </mat-card-header>
   <mat-card-content fxLayout="row"
                     fxLayoutAlign="space-around center">
-    <p class="price">{{paint.price}} USD</p>
-    <button mat-raised-button class="buybutton"
-            (click)="onBuy();appCount.increase()"
-            onclick="this.className = 'hide'"
-    >Buy now</button>
-    <div>{{bought}}</div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="price">{{paint.price}} USD</div>
+      <button mat-raised-button class="buybutton"
+              (click)="onBuy();appCount.increase()"
+              onclick="this.className = 'hide'"
+      >Buy now</button>
+      <div>{{bought}}</div>
+    </div>
+
   </mat-card-content>
 </mat-card>

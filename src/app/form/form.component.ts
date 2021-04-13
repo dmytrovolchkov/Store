@@ -39,6 +39,7 @@ export class FormComponent implements OnInit {
       const formData = {...this.form.value};
       console.log('Form data ', formData);
       this.form.reset();
+
     }
   }
 }

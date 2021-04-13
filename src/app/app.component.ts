@@ -3,18 +3,7 @@ import { interval, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { CounterService } from './services/counter.service';
-import { ItemListService } from './services/item-list.service';
-
-export interface Paint {
-  imageUrl: string;
-  title: string;
-  author: string;
-  year: number;
-  price: number;
-  sells: number;
-  rating: number;
-  popular: number;
-}
+import { ItemListService, Paint } from './services/item-list.service';
 
 @Component({
   selector: 'app-root',
@@ -59,6 +48,8 @@ deviceXs: boolean;
       this.deviceXs = result.mqAlias === 'xs';
       }
     );
+    this.Items.loadElement$().subscribe(data => {console.log(data);
+    } );
   }
   ngOnDestroy(): any {
     this.mediaSub.unsubscribe();

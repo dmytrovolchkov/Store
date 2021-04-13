@@ -1,5 +1,5 @@
 .price {
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -9,7 +9,7 @@
 }
 
 .title {
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -20,10 +20,10 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-  margin: 4px 0px;
+  margin: 4px 0;
 }
 .text {
-  font-family: Open Sans;
+  font-family: Open Sans, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -62,7 +62,7 @@
   box-sizing: border-box;
   border-radius: 12px;
 
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-style: normal;
   font-weight: bold;
   color: white;
