@@ -39,3 +39,8 @@
   </app-paint>
 </div>
 <app-form></app-form>
+<div *ngFor="let p of review">
+  <p>Name:"{{p.name}}"</p>
+  <p>Comment:"{{p.comment}}"</p>
+  <br>
+</div>

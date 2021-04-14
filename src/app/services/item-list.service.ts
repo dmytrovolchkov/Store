@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 export interface Paint {
@@ -26,13 +25,4 @@ export class ItemListService {
     return this.http.get<Paint[]>('http://localhost:3000/paints');
   }
 
-  Best$(): any {
-    return of (this.paint.sort((a, b) => (a.sells > b.sells ? -1 : 1)));
-  }
-  Top$(): any {
-    return of ((this.paint.slice(0)).sort((a, b) => (a.rating < b.rating ? -1 : 1)));
-  }
-  Most$(): any {
-    return of ((this.paint.slice(0)).sort((a, b) => (a.popular > b.popular ? -1 : 1)));
-  }
 }

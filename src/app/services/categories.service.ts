@@ -1,20 +1,16 @@
-import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import {Injectable, Input} from '@angular/core';
+import {Paint} from './item-list.service';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriesService {
 
-  category = [
-    'Scenery',
-    'Portrait',
-    'Still life',
-    'Cubism',
-    'Seascape'
-  ];
+  constructor(private http: HttpClient) {}
 
-  Category$(): any {
-    return of (this.category);
+  loadCategory$(): any {
+    return this.http.get('http://localhost:3000/categories');
   }
+
 }

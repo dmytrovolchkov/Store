@@ -63,11 +63,26 @@
 ],
 
   "categories": [
-    {"category": "Scenery"},
-    {"category": "Portrait"},
-    {"category": "Still life"},
-    {"category": "Cubism"},
-    {"category": "Seascape"}
+    "Scenery",
+    "Portrait",
+    "Still life",
+    "Cubism",
+    "Seascape"
+],
+
+  "reviews": [
+  {
+    "name": "Ivan",
+    "email": "van@gmail.com",
+    "score": 5,
+    "comment": "Good"
+  },
+  {
+    "name": "Sasha",
+    "email": "san@gmail.com",
+    "score": 4,
+    "comment": "Nice"
+  }
 ]
 
 }

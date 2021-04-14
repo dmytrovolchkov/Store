@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ReviewService} from '../services/reviews.service';
 
 @Component({
   selector: 'app-form',
@@ -9,7 +10,15 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class FormComponent implements OnInit {
 
   form: FormGroup;
+  re: FormGroup;
 
+  constructor(public reviews: ReviewService) {
+    this.reviews.loadReview$().subscribe(data => {
+        this.re = data;
+        console.log(data);
+      }
+    );
+  }
   ngOnInit(): void {
     this.form = new FormGroup({
       name: new FormControl('',

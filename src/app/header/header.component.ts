@@ -9,7 +9,15 @@ import {CategoriesService} from '../services/categories.service';
 
 export class HeaderComponent implements OnInit {
 
-  constructor(public count: CounterService, public category: CategoriesService) { }
+  cat: any;
+
+  constructor(public count: CounterService, public category: CategoriesService) {
+    this.category.loadCategory$().subscribe(data => {
+      this.cat = data;
+      console.log(this.cat);
+    } );
+
+  }
 
   @Input() deviceXs: boolean;
 

@@ -4,7 +4,8 @@ import { map } from 'rxjs/operators';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { CounterService } from './services/counter.service';
 import { ItemListService, Paint } from './services/item-list.service';
-import {CategoriesService} from './services/categories.service';
+import {FormGroup} from '@angular/forms';
+import {ReviewService} from './services/reviews.service';
 
 @Component({
   selector: 'app-root',
@@ -18,19 +19,12 @@ export class AppComponent implements OnInit, OnDestroy {
   interBest: Paint[];
   topPaints: Paint[];
   mostPaints: Paint[];
+  review: FormGroup;
 
   constructor(public mediaObserver: MediaObserver,
               public appCounter: CounterService,
-              public Items: ItemListService) {
-
-    Items.Best$().subscribe ( paints => {
-      this.bestPaints = paints; });
-    this.interBest = this.bestPaints.slice(0, 3);
-    Items.Top$().subscribe( paints => {
-      this.topPaints = paints; });
-
-    Items.Most$().subscribe( paints => {
-      this.mostPaints = paints; });
+              public items: ItemListService,
+              public reviews: ReviewService) {
 
     interval(3000)
       .pipe(
@@ -50,12 +44,18 @@ deviceXs: boolean;
       this.deviceXs = result.mqAlias === 'xs';
       }
     );
-    this.Items.loadElement$().subscribe(data => {
+    this.items.loadElement$().subscribe(data => {
       this.bestPaints = data.sort((a, b) => (a.sells > b.sells ? -1 : 1));
       this.topPaints = (data.slice(0)).sort((a, b) => (a.rating < b.rating ? -1 : 1));
       this.mostPaints = (data.slice(0)).sort((a, b) => (a.popular > b.popular ? -1 : 1));
+      this.interBest = this.bestPaints.slice(0, 3);
       console.log(data);
     } );
+    this.reviews.loadReview$().subscribe(data => {
+        this.review = data;
+        console.log(data);
+      }
+    );
 
   }
   ngOnDestroy(): any {
