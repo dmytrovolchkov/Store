@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { CounterService } from './services/counter.service';
 import { ItemListService, Paint } from './services/item-list.service';
+import {CategoriesService} from './services/categories.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,9 @@ export class AppComponent implements OnInit, OnDestroy {
   topPaints: Paint[];
   mostPaints: Paint[];
 
-  constructor(public mediaObserver: MediaObserver, public appCounter: CounterService, public Items: ItemListService) {
+  constructor(public mediaObserver: MediaObserver,
+              public appCounter: CounterService,
+              public Items: ItemListService) {
 
     Items.Best$().subscribe ( paints => {
       this.bestPaints = paints; });
@@ -38,7 +41,6 @@ export class AppComponent implements OnInit, OnDestroy {
         })
       )
       .subscribe();
-
   }
 mediaSub: Subscription;
 deviceXs: boolean;
@@ -48,13 +50,17 @@ deviceXs: boolean;
       this.deviceXs = result.mqAlias === 'xs';
       }
     );
-    this.Items.loadElement$().subscribe(data => {console.log(data);
+    this.Items.loadElement$().subscribe(data => {
+      this.bestPaints = data.sort((a, b) => (a.sells > b.sells ? -1 : 1));
+      this.topPaints = (data.slice(0)).sort((a, b) => (a.rating < b.rating ? -1 : 1));
+      this.mostPaints = (data.slice(0)).sort((a, b) => (a.popular > b.popular ? -1 : 1));
+      console.log(data);
     } );
+
   }
   ngOnDestroy(): any {
     this.mediaSub.unsubscribe();
   }
-
 
   onInput(event?): any {
     this.inputPhone = event.target.value;

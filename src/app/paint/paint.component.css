@@ -1,3 +1,15 @@
+. rect {
+  /* Rectangle 26 */
+  max-height: 180px;
+  max-width: 237px;
+  left: 0px;
+  top: 0px;
+  border-radius: 12px;
+
+  position: absolute;
+
+}
+
 .price {
   font-family: Poppins, sans-serif;
   font-style: normal;
@@ -45,8 +57,8 @@
 }
 
 .paint {
-  max-height: 300px;
-  max-width: 200px;
+  max-height: 237px;
+  max-width: 180px;
   border-radius: 12px;
   margin: 12px;
 }

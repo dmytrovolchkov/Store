@@ -35,10 +35,11 @@ export class FormComponent implements OnInit {
 
   submit(): any {
     if (this.form.valid) {
-      console.log('Form ', this.form);
       const formData = {...this.form.value};
       console.log('Form data ', formData);
       this.form.reset();
+      this.form.markAsPristine();
+      this.form.markAsUntouched();
 
     }
   }

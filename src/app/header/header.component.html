@@ -1,24 +1,17 @@
 <mat-toolbar>
-  <mat-toolbar-row
-    class="white-line"
-    fxLayout="row"
-    fxLayoutAlign="end center">
-    <div [appTooltip]="' items in the basket'">
-      <button mat-flat-button>
-        <mat-icon>home</mat-icon>
-        Home</button>
-      <button mat-flat-button>About us</button>
-      <button mat-flat-button>Careers</button>
-    </div>
+  <mat-toolbar-row class="white-line">
+    <div class="chat">Chat with us</div>
+    <div class="phone">+38 (099) 323-22-22</div>
+    <div class="mail">info@freshnesecom.com</div>
   </mat-toolbar-row>
   <mat-toolbar-row class="white-line"
-                   fxLayoutAlign="end center">
-    <div>
+                   fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="head">Freshnesecom</div>
       <button mat-flat-button>
         <mat-icon>shopping_cart</mat-icon>
         <span *ngIf="!deviceXs">Cart {{count.counter}}</span>
       </button>
-    </div>
+
   </mat-toolbar-row>
   <mat-toolbar-row fxLayout="row" fxLayoutAlign="start center">
     <button mat-button [matMenuTriggerFor]="menu">{{category.category[0]}}
