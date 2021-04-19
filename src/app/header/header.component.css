@@ -1,124 +1,84 @@
-.chat { /* Chat with us */
-
-  position: static;
-  width: 70px;
-  height: 16px;
-  left: 0px;
-  top: 0px;
-
-  font-family: Open Sans, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-
-  /* C2/A */
-  color: #6A983C;
-
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 33px;
-}
-
-.phone {/* +420 336 775 664 */
-
-  position: static;
-  width: 99px;
-  height: 16px;
-  left: 103px;
-  top: 0px;
-
-  font-family: Open Sans, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-
-  /* C1/A */
-  color: #151515;
-
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin: 0px 33px;
-}
-
-.mail {
-  /* info@freshnesecom.com */
-
-  position: static;
-  width: 140px;
-  height: 16px;
-  left: 235px;
-  top: 0px;
-
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-
-  /* C1/A */
-  color: #151515;
-
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  margin: 0px 33px;
-
-}
-
-.blog {
-  /* Blog */
-
-  position: static;
-  width: 25px;
-  height: 16px;
-  left: 0px;
-  top: 0px;
-
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-
-  /* C2/A */
-  color: #6A983C;
-
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 38px;
-
-}
-
-.head {
-  /* Freshnesecom */
-
-  position: static;
-  width: 177px;
-  height: 18px;
-  left: 0px;
-  top: 16px;
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 0px;
-
-}
 
 .white-line {
   background-color: white;
+  padding: 1rem 0;
+}
+
+.green-text {
+  /* Chat with us */
+
+  font-family: Open Sans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+
+  /* C2/A */
+  color: #6A983C;
+}
+
+.black-text {/* +420 336 775 664 */
+
+  font-family: Open Sans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+
+  /* C1/A */
+  color: #151515;
+}
+
+.gray-line {
+  background-color: #F9F9F9;
+  padding: 1rem 0;
+}
+
+.search-form {
+  height: 42px;
+  background: #F9F9F9;
+/* C1/D */
+
+border: 1px solid #D1D1D1;
+box-sizing: border-box;
+border-radius: 12px;
+}
+
+
+.black-bold-text {
+  /* Button/Default */
+
+font-family: Poppins, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 22px;
+/* identical to box height */
+
+
+/* C1/A */
+
+color: #151515;
+}
+
+.ng-tooltip {
+  position: absolute;
+  max-width: 150px;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+  padding: 3px 8px;
+  background: cadetblue;
+  border-radius: 4px;
+  z-index: 1000;
+  opacity: 0;
+}
+.ng-tooltip:after {
+  content: none;
+  position: absolute;
+  border-style: solid;
+}
+
+.ng-tooltip-show {
+  opacity: 1;
 }

@@ -4,13 +4,14 @@ import { map } from 'rxjs/operators';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { CounterService } from './services/counter.service';
 import { ItemListService, Paint } from './services/item-list.service';
-import {FormGroup} from '@angular/forms';
-import {ReviewService} from './services/reviews.service';
+import { Review, ReviewService } from './services/reviews.service';
+import { CategoriesService } from './services/categories.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css',
+              '../bootstrap.css']
 })
 
 export class AppComponent implements OnInit, OnDestroy {
@@ -19,12 +20,19 @@ export class AppComponent implements OnInit, OnDestroy {
   interBest: Paint[];
   topPaints: Paint[];
   mostPaints: Paint[];
-  review: FormGroup;
+  review: Review[];
+  cat: any;
 
   constructor(public mediaObserver: MediaObserver,
               public appCounter: CounterService,
               public items: ItemListService,
-              public reviews: ReviewService) {
+              public reviews: ReviewService,
+              public category: CategoriesService) {
+
+                this.category.loadCategory$().subscribe(data => {
+                  this.cat = data;
+                  console.log(this.cat);
+                } );
 
     interval(3000)
       .pipe(
@@ -66,5 +74,6 @@ deviceXs: boolean;
     this.inputPhone = event.target.value;
     event.target.value = '';
   }
+
 
 }

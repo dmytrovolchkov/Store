@@ -1,27 +1,60 @@
-<mat-toolbar>
-  <mat-toolbar-row class="white-line">
-    <div class="chat">Chat with us</div>
-    <div class="phone">+38 (099) 323-22-22</div>
-    <div class="mail">info@freshnesecom.com</div>
+
+<mat-toolbar class="container white-line">
+
+  <mat-toolbar-row>
+      <div class="col-md green-text">Chat with us</div>
+      <div class="col-md black-text">+38 (099) 323-22-22</div>
+      <div class="col-md black-text">info@freshnesecom.com</div>
+    <div class="col-md-5"></div>
+      <div class="col-md green-text">Blog</div>
+      <div class="col-md green-text">About us</div>
+      <div class="col-md green-text">Careers</div>
   </mat-toolbar-row>
-  <mat-toolbar-row class="white-line"
-                   fxLayout="row" fxLayoutAlign="space-between center">
-      <div class="head">Freshnesecom</div>
+
+  <mat-toolbar-row>
+      <div class="col-md">Freshnesecom</div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4 search-form">
+
+        <button class="black-bold-text"
+        mat-button [matMenuTriggerFor]="menu"
+        >All categories
+        <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <input matInput class="black-bold-text" placeholder="Search products ..." value="">
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let p of cat">{{p}}</button>
+</mat-menu>
+
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-1">
+      <button mat-flat-button>
+        <mat-icon>person</mat-icon>
+      </button>
+    </div>
+      <div class="col-md-1"
+      [appTooltip]="count.counter+' items in the basket'">
       <button mat-flat-button>
         <mat-icon>shopping_cart</mat-icon>
-        <span *ngIf="!deviceXs">Cart {{count.counter}}</span>
       </button>
+    </div>
   </mat-toolbar-row>
-  <mat-toolbar-row fxLayout="row" fxLayoutAlign="start center">
-    <button mat-button [matMenuTriggerFor]="menu"
+
+  <mat-toolbar-row class="gray-line"
+  fxLayout="row"
+  fxLayoutAlign="start center">
+    <button class="black-bold-text"
+    mat-button [matMenuTriggerFor]="menu1"
             *ngFor="let p of cat">{{p}}
       <mat-icon>keyboard_arrow_down</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
+  </button>
+    <mat-menu #menu1="matMenu">
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
       <button mat-menu-item>Item 3</button>
     </mat-menu>
   </mat-toolbar-row>
-</mat-toolbar>
 
+</mat-toolbar>

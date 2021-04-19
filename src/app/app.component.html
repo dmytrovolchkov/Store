@@ -1,6 +1,6 @@
 <app-header [deviceXs]="deviceXs"></app-header>
 
-<div fxLayoutAlign="start center">
+<div class="container" fxLayoutAlign="start center">
   <form class="example-form">
     <mat-form-field class="example-full-width"  fxFlexOffset="5">
       <mat-label>Phone number</mat-label>
@@ -11,36 +11,62 @@
   <span fxFlexOffset="5">{{inputPhone | phonePipe}}</span>
 </div>
 
-<h1 class="mat-typography h1"
-    align="center"
-    [appTooltip]="appCounter.counter+' items in the basket'">
-  Bestsellers</h1>
-
+<div class="container">
 <div fxLayout="row" fxLayoutAlign="space-evenly stretch">
-  <app-paint
+  <div class="col-md-3 black-bold-text">
+    Bestsellerts
+    <div class="green-underline" *ngFor="let p of cat">{{p}}
+    </div>
+  </div>
+  <app-paint class="col-md"
     *ngFor="let p of interBest"
   [paint]="p">
   </app-paint>
 </div>
+</div>
 
-<h1 class="mat-typography h1" align="center">Top Ranking</h1>
-<div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+<div class="container marg" fxLayout="row">
+  <div class="col-md-2 black-bold-text">
+    Top ranking paints
+    <div class="green-underline" *ngFor="let p of cat">{{p}}
+    </div>
+  </div>
+<div class="col-md" fxLayout="row">
   <app-paint
     *ngFor="let p of topPaints"
     [paint]="p">
   </app-paint>
 </div>
+</div>
 
-<h1 class="mat-typography h1" align="center">Most Popular</h1>
-<div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+<div class="container marg" fxLayout="row">
+  <div class="col-md-2 black-bold-text">
+    Most popular paints
+    <div class="green-underline" *ngFor="let p of cat">{{p}}
+    </div>
+  </div>
+<div class="col-md" fxLayout="row">
   <app-paint
     *ngFor="let p of mostPaints"
     [paint]="p">
   </app-paint>
 </div>
-<app-form></app-form>
+</div>
+
+<div class="container marg"  fxLayout="row">
+  <div class="col-md-5"></div>
+  <div class="col-md-2">
+    <app-form></app-form>
+
 <div *ngFor="let p of review">
   <p>Name:"{{p.name}}"</p>
   <p>Comment:"{{p.comment}}"</p>
   <br>
 </div>
+
+  </div>
+  <div class="col-md-5"></div>
+</div>
+
+
+

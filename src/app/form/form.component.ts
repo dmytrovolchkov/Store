@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ReviewService} from '../services/reviews.service';
+import {Review, ReviewService} from '../services/reviews.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-form',
@@ -10,9 +11,9 @@ import {ReviewService} from '../services/reviews.service';
 export class FormComponent implements OnInit {
 
   form: FormGroup;
-  re: FormGroup;
+  re: Review[];
 
-  constructor(public reviews: ReviewService) {
+  constructor(public reviews: ReviewService, public http: HttpClient) {
     this.reviews.loadReview$().subscribe(data => {
         this.re = data;
         console.log(data);
@@ -44,11 +45,24 @@ export class FormComponent implements OnInit {
 
   submit(): any {
     if (this.form.valid) {
+      const post: Review = {
+        name: this.form.value.name,
+        email: this.form.value.email,
+        score: this.form.value.score,
+        comment: this.form.value.comment
+      };
       const formData = {...this.form.value};
-      console.log('Form data ', formData);
       this.form.reset();
       this.form.markAsPristine();
       this.form.markAsUntouched();
+      console.log('Form data ', formData);
+      this.http.post<Review>('http://localhost:3000/reviews', post)
+      .subscribe(data => {
+        this.re.push(data);
+        console.log('Form data 2', formData);
+        }
+      );
+
 
     }
   }

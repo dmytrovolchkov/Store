@@ -33,7 +33,7 @@ export class ToolTipDirective {
   }
 
   create(): any {
-    this.tooltip = this.renderer.createElement('span');
+    this.tooltip = this.renderer.createElement('div');
     this.renderer.appendChild(
       this.tooltip,
       this.renderer.createText(this.tooltipTitle)

@@ -1,15 +1,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <mat-card class="form" align="center">
-  <img mat-card-image
-       src="{{paint.imageUrl}}" alt="" class="paint">
+  <img src="{{paint.imageUrl}}" alt="" class="paint">
   <mat-card-header fxLayout="column">
     <p class="title">" {{paint.title}} "</p>
     <p class="text">by {{paint.author}}</p>
   </mat-card-header>
   <mat-card-content fxLayout="row"
                     fxLayoutAlign="space-around center">
-    <div fxLayout="row" fxLayoutAlign="space-between center">
-      <div class="price">{{paint.price}} USD</div>
+    <div class="bottom" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="black-bold-text">{{paint.price}} USD</div>
       <button mat-raised-button class="buybutton"
               (click)="onBuy();appCount.increase()"
               onclick="this.className = 'hide'"

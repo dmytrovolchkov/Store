@@ -5,7 +5,8 @@ import { CounterService } from '../services/counter.service';
 @Component({
   selector: 'app-paint',
   templateUrl: './paint.component.html',
-  styleUrls: ['./paint.component.css'],
+  styleUrls: ['./paint.component.css',
+              '../../bootstrap.css'],
 
 })
 export class PaintComponent implements OnInit {
@@ -16,7 +17,7 @@ export class PaintComponent implements OnInit {
   ngOnInit(): void {
   }
   onBuy(): any {
-    this.bought = 'Already in basket';
+    this.bought = 'In basket';
   }
 
 }
