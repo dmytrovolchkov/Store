@@ -72,17 +72,24 @@
 
   "reviews": [
   {
-    "name": "Ivan",
+    "name": "Ivan Kasper",
     "email": "van@gmail.com",
     "score": 5,
     "comment": "Good"
   },
   {
-    "name": "Sasha",
+    "name": "Paul White",
     "email": "san@gmail.com",
     "score": 4,
     "comment": "Nice"
+  },
+  {
+    "name": "Gregory Petrov",
+    "email": "scccc@gmail.com",
+    "score": 4,
+    "comment": "Nice"
   }
+
 ]
 
 }

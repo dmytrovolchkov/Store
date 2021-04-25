@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Paint} from '../services/item-list.service';
 import { CounterService } from '../services/counter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-paint',
@@ -10,7 +11,7 @@ import { CounterService } from '../services/counter.service';
 
 })
 export class PaintComponent implements OnInit {
-  constructor(public appCount: CounterService) { }
+  constructor(public appCount: CounterService, private router: Router) { }
   bought = '';
   @Input() paint: Paint;
 
@@ -18,6 +19,9 @@ export class PaintComponent implements OnInit {
   }
   onBuy(): any {
     this.bought = 'In basket';
+  }
+  goToItemPage () {
+this.router.navigate(['/form'])
   }
 
 }

@@ -5,7 +5,7 @@ import {FormGroup} from '@angular/forms';
 export interface Review {
   name: string;
   email: string;
-  score: number;
+  score: string;
   comment: string;
 }
 

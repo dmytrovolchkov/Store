@@ -1,0 +1,18 @@
+.white-line {
+  background-color: white;
+  padding: 1rem 0;
+}
+
+.adress {
+/* Caption/Default */
+
+font-family: Open Sans, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 16px;
+
+/* C1/C */
+
+color: #A9A9A9;
+}

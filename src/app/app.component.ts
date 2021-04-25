@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';

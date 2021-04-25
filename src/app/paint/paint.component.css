@@ -101,3 +101,10 @@ color: #151515;
 	bottom: 10px;
   margin: 10px;
 }
+
+
+li.active a {
+  font-weight: bold;
+  color: #333333;
+  cursor: default;
+}

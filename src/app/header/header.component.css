@@ -82,3 +82,22 @@ color: #151515;
 .ng-tooltip-show {
   opacity: 1;
 }
+
+
+.green-underline {
+  /* Chat with us */
+
+  font-family: Open Sans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+  text-decoration-line: underline;
+  margin-top: 10px;
+
+  /* C2/A */
+
+  color: #6A983C;
+}

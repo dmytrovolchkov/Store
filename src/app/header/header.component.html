@@ -2,19 +2,24 @@
 <mat-toolbar class="container white-line">
 
   <mat-toolbar-row>
-      <div class="col-md green-text">Chat with us</div>
+      <div class="col-md green-text">
+        <a class="green-text"
+        routerLinkActive="green-underline"
+        [routerLink]="['/form']">Chat with us</a></div>
       <div class="col-md black-text">+38 (099) 323-22-22</div>
       <div class="col-md black-text">info@freshnesecom.com</div>
-    <div class="col-md-5"></div>
-      <div class="col-md green-text">Blog</div>
+      <div class="col-md offset-5 green-text">
+        <a class="green-text"
+        routerLinkActive="green-underline"
+        [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/']">Blog</a></div>
       <div class="col-md green-text">About us</div>
       <div class="col-md green-text">Careers</div>
   </mat-toolbar-row>
 
   <mat-toolbar-row>
       <div class="col-md">Freshnesecom</div>
-      <div class="col-md-2"></div>
-      <div class="col-md-4 search-form">
+      <div class="col-md-4 offset-2 search-form">
 
         <button class="black-bold-text"
         mat-button [matMenuTriggerFor]="menu"
@@ -28,8 +33,7 @@
 </mat-menu>
 
       </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-1">
+      <div class="col-md-1 offset-2">
       <button mat-flat-button>
         <mat-icon>person</mat-icon>
       </button>
