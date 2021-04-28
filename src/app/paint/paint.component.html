@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <mat-card class="form" align="center">
-  <img src="{{paint.imageUrl}}" alt="" class="paint">
+  <img [routerLink]="['/home', paint.id]" src="{{paint.imageUrl}}" alt="" class="paint">
   <mat-card-header fxLayout="column">
     <p class="title">" {{paint.title}} "</p>
     <p class="text">by {{paint.author}}</p>
@@ -15,6 +15,5 @@
       >Buy now</button>
       <div>{{bought}}</div>
     </div>
-
   </mat-card-content>
 </mat-card>

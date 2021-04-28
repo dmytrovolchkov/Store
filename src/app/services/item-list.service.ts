@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 export interface Paint {
+  id: number;
   imageUrl: string;
   title: string;
   author: string;
@@ -23,6 +24,12 @@ export class ItemListService {
 
   loadElement$(): any {
     return this.http.get<Paint[]>('http://localhost:3000/paints');
+  }
+
+  getById(id: number) {
+    this.loadElement$().subscribe(data => {
+      this.paint = data});
+    return this.paint.find(p => p.id === id);
   }
 
 }

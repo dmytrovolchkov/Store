@@ -12,10 +12,12 @@ export class FormComponent implements OnInit {
 
   form: FormGroup;
   re: Review[];
+  todoId: number;
   todoName = '';
   todoEmail = '';
   todoScore = '';
   todoComment = '';
+
 
   constructor(public reviews: ReviewService, public http: HttpClient) {
     this.reviews.loadReview$().subscribe(data => {
@@ -59,6 +61,7 @@ export class FormComponent implements OnInit {
 
   addPost() {
     const post2: Review = {
+      id: this.todoId,
       name: this.todoName,
       email: this.todoEmail,
       score: this.todoScore,

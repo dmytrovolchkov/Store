@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { AppComponent } from './app.component';
-import { PaintComponent } from './paint/paint.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,18 +21,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ItemComponent } from './item/item.component';
 import { FooterComponent } from './footer/footer.component';
+import { ErrorPageModule } from './error-page/error-page.module';
+import { AboutPageModule } from './about-page/about-page.module';
+import { CareersPageModule } from './careers-page/careers-page.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PaintComponent,
     ToolTipDirective,
     HeaderComponent,
     PhonePipePipe,
     FormComponent,
     ItemComponent,
     FooterComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -53,6 +53,10 @@ import { FooterComponent } from './footer/footer.component';
     MatMenuModule,
     HttpClientModule,
     AppRoutingModule,
+    AboutPageModule,
+    CareersPageModule,
+    ErrorPageModule,
+    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

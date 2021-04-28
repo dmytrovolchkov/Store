@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {FormGroup} from '@angular/forms';
 
 export interface Review {
+  id: number;
   name: string;
   email: string;
   score: string;
@@ -24,6 +24,12 @@ export class ReviewService {
 
   addReview$(): any {
     return this.http.post<Review>('http://localhost:3000/reviews', this.post);
+  }
+
+  getByIdRev(id: number) {
+    this.loadReview$().subscribe(data => {
+      this.post = data});
+    return this.post.find(p => p.id === id);
   }
 
 }

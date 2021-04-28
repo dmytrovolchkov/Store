@@ -1,37 +1,54 @@
+<div class="container white-line" fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="col-md-5" fxLayout="row" fxLayoutAlign="space-between center">
+    <a class="green-text"
+    routerLinkActive="green-text-underline"
+    [routerLink]="['/form']">Chat with us</a>
+    <div class="black-text">
+      <a class="black-text" href="tel:+380993232222">
+      +38 (099) 323-22-22
+      </a>
+    </div>
+    <div class="black-text">
+      <a class="black-text" href="mailto:info@freshnesecom.com">
+      info@freshnesecom.com
+      </a>
+    </div>
+  </div>
+  <div class="col-md-3" fxLayout="row" fxLayoutAlign="space-between center">
+    <a class="green-text"
+    routerLinkActive="green-text-underline"
+    [routerLinkActiveOptions]="{exact: true}"
+    [routerLink]="['/']">Blog</a>
+    <div>
+    <a class="green-text"
+    routerLinkActive="green-text-underline"
+    [routerLink]="['/about']">About us
+  </a></div>
+    <div>
+    <a class="green-text"
+    routerLinkActive="green-text-underline"
+    [routerLink]="['/careers']">Careers
+    </a></div>
+  </div>
+  </div>
 
-<mat-toolbar class="container white-line">
-
-  <mat-toolbar-row>
-      <div class="col-md green-text">
-        <a class="green-text"
-        routerLinkActive="green-underline"
-        [routerLink]="['/form']">Chat with us</a></div>
-      <div class="col-md black-text">+38 (099) 323-22-22</div>
-      <div class="col-md black-text">info@freshnesecom.com</div>
-      <div class="col-md offset-5 green-text">
-        <a class="green-text"
-        routerLinkActive="green-underline"
-        [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/']">Blog</a></div>
-      <div class="col-md green-text">About us</div>
-      <div class="col-md green-text">Careers</div>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-      <div class="col-md">Freshnesecom</div>
-      <div class="col-md-4 offset-2 search-form">
-
-        <button class="black-bold-text"
-        mat-button [matMenuTriggerFor]="menu"
-        >All categories
-        <mat-icon>keyboard_arrow_down</mat-icon>
-        </button>
-        <input matInput class="black-bold-text" placeholder="Search products ..." value="">
-
+<div class="container white-line" fxLayout="row" fxLayoutAlign="none center">
+  <div class="col-md-1">
+  <a class="green-text"
+  routerLinkActive="green-text-underline"
+  [routerLinkActiveOptions]="{exact: true}"
+  [routerLink]="['/home']"
+  >Freshnesecom</a></div>
+  <div class="col-md-4 offset-3 search-form" fxLayoutAlign="space-between center">
+    <button class="black-bold-text inline"
+    mat-button [matMenuTriggerFor]="menu"
+    >All categories
+    <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <input class="black-bold-text" placeholder="Search products ..." value="">
 <mat-menu #menu="matMenu">
   <button mat-menu-item *ngFor="let p of cat">{{p}}</button>
 </mat-menu>
-
       </div>
       <div class="col-md-1 offset-2">
       <button mat-flat-button>
@@ -44,11 +61,9 @@
         <mat-icon>shopping_cart</mat-icon>
       </button>
     </div>
-  </mat-toolbar-row>
+</div>
 
-  <mat-toolbar-row class="gray-line"
-  fxLayout="row"
-  fxLayoutAlign="start center">
+<div class="container gray-line" fxLayout="row" fxLayoutAlign="start center">
     <button class="black-bold-text"
     mat-button [matMenuTriggerFor]="menu1"
             *ngFor="let p of cat">{{p}}
@@ -59,6 +74,4 @@
       <button mat-menu-item>Item 2</button>
       <button mat-menu-item>Item 3</button>
     </mat-menu>
-  </mat-toolbar-row>
-
-</mat-toolbar>
+</div>

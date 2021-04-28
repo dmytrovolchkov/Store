@@ -1,4 +1,8 @@
-<app-header [deviceXs]="deviceXs"></app-header>
+<app-header></app-header>
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
 
 <div class="container" fxLayoutAlign="start center">
   <form class="example-form">
@@ -10,57 +14,3 @@
   </form>
   <span fxFlexOffset="5">{{inputPhone | phonePipe}}</span>
 </div>
-
-<div class="container">
-<div fxLayout="row" fxLayoutAlign="space-evenly stretch">
-  <div class="col-md-3 black-bold-text">
-    Bestsellerts
-    <div class="green-underline" *ngFor="let p of cat">{{p}}
-    </div>
-  </div>
-  <app-paint
-
-  class="col-md"
-    *ngFor="let p of interBest"
-  [paint]="p">
-  </app-paint>
-</div>
-</div>
-
-<div class="container marg" fxLayout="row">
-  <div class="col-md-2 black-bold-text">
-    Top ranking paints
-    <div class="green-underline" *ngFor="let p of cat">{{p}}
-    </div>
-  </div>
-<div class="col-md" fxLayout="row">
-  <app-paint
-    *ngFor="let p of topPaints"
-    [paint]="p">
-  </app-paint>
-</div>
-</div>
-
-<div class="container marg" fxLayout="row">
-  <div class="col-md-2 black-bold-text">
-    Most popular paints
-    <div class="green-underline" *ngFor="let p of cat">{{p}}
-    </div>
-  </div>
-<div class="col-md" fxLayout="row">
-  <app-paint
-    *ngFor="let p of mostPaints"
-    [paint]="p">
-  </app-paint>
-</div>
-</div>
-
-<app-item></app-item>
-
-<div class="container marg" fxLayout="row">
-  <div class="offset-5 col-md-2">
-    <router-outlet></router-outlet>
-  </div>
-</div>
-
-<app-footer></app-footer>

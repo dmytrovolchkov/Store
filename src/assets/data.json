@@ -1,6 +1,7 @@
 {
   "paints": [
   {
+    "id": 1,
     "imageUrl": "https://struchaieva.art/media/artworks/previews/Soul-of-Azori-I-150_100-cm_Al9Axr5.jpeg",
     "title": "Azori Soul",
     "author": "James Pello",
@@ -11,6 +12,7 @@
     "popular": 347
   },
   {
+    "id": 2,
     "imageUrl": "https://struchaieva.art/media/artworks/previews/Meeting-of-the-Giants-min_oJYZdGB.jpeg",
     "title": "Giants Meet",
     "author": "Paul Mann",
@@ -21,6 +23,7 @@
     "popular": 3332
   },
   {
+    "id": 3,
     "imageUrl": "https://struchaieva.art/media/artworks/previews/5_o7679ex.jpeg",
     "title": "Flower Eye",
     "author": "Jane Subb",
@@ -31,6 +34,7 @@
     "popular": 3423
   },
   {
+    "id": 4,
     "imageUrl": "https://struchaieva.art/media/artworks/previews/3_YjENyDZ.jpeg",
     "title": "Body Music",
     "author": "Paul Mann",
@@ -41,6 +45,7 @@
     "popular": 143
   },
   {
+    "id": 5,
     "imageUrl": "https://struchaieva.art/media/artworks/previews/gggg-1_NRPv2zN.jpeg",
     "title": "Dialog",
     "author": "James Pello",
@@ -51,6 +56,7 @@
     "popular": 13413
   },
   {
+    "id": 6,
     "imageUrl": "https://struchaieva.art/media/artworks/previews/cvetochnaya-rapsodia_LN6t4IC.jpeg",
     "title": "Flower Rapsody",
     "author": "Jane Subb",
@@ -72,18 +78,21 @@
 
   "reviews": [
   {
+    "id": 1,
     "name": "Ivan Kasper",
     "email": "van@gmail.com",
     "score": 5,
     "comment": "Good"
   },
   {
+    "id": 3,
     "name": "Paul White",
     "email": "san@gmail.com",
     "score": 4,
     "comment": "Nice"
   },
   {
+    "id": 6,
     "name": "Gregory Petrov",
     "email": "scccc@gmail.com",
     "score": 4,

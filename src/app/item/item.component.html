@@ -1,17 +1,17 @@
 <mat-toolbar class="container white-line">
   <mat-toolbar-row>
-    <div class="col-md adress">Homepage / category / item</div>
+    <div class="col-md adress">Homepage / category / {{item.id}}</div>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div fxLayout="row" class="container">
 <div class="col-md-6">
 
-    <img src="https://struchaieva.art/media/artworks/previews/Soul-of-Azori-I-150_100-cm_Al9Axr5.jpeg" alt="">
+    <img src="{{item.imageUrl}}" alt="">
 
   </div>
   <div class="col-md-6">
-    <h1 align="center">Titles of paints</h1>
+    <h1 align="center">{{item.title}}</h1>
     <mat-icon>star</mat-icon>
     <mat-icon>star</mat-icon>
     <mat-icon>star</mat-icon>
@@ -34,37 +34,44 @@
       <span>country</span>
     </div>
     <div fxLayout="column" class="col-md-2 offset-1">
-      <span>looks_5</span>
-      <span>looks_6</span>
-      <span>looks_7</span>
-      <span>looks_8</span>
+      <span>123123{{item.id}}</span>
+      <span class="nowrap">{{item.author}}</span>
+      <span>{{item.year}}</span>
+      <span>Ukraine</span>
     </div>
     <div fxLayout="column" class="col-md-2 offset-1">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
+      <span>Rating</span>
+      <span>Sells</span>
+      <span>Popular</span>
+      <span>Null</span>
     </div>
     <div fxLayout="column" class="col-md-2 offset-1">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
+      <span>{{item.rating}}</span>
+      <span>{{item.sells}}</span>
+      <span>{{item.popular}}</span>
+      <span>Null</span>
     </div>
   </div>
 
-
 <div>
   <div>
-    <div fxLayout="row">
-      <div class="black-bold-text col-md-4 offset-2">paint.price USD</div>
+    <div class="marg" fxLayout="row">
+      <div class="black-bold-text col-md-4 offset-2">{{item.price}} USD</div>
       <button mat-raised-button class="buybutton col-md-4 offset-2">Buy now</button>
     </div>
   </div>
 
 </div>
 
+<div *ngIf="rev !== undefined">
+  <p>Reviews:</p>
+  <p>Name: {{rev.name}}</p>
+  <p>Score: {{rev.score}}</p>
+  <p>Comment: {{rev.comment}}</p>
+</div>
+
+<app-form></app-form>
+
 
   </div>
   </div>
-
