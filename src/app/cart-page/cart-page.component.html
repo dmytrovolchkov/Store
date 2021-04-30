@@ -1,0 +1,63 @@
+<div class="container marg" fxLayout="row">
+  <div class="col-md-2 offset-8
+  shopping-cart" fxLayoutAlign=" center">
+  Shopping cart
+  </div>
+  <div class="col-md-1 offset-1" [routerLink]="['/home']"
+  fxLayout="row" fxLayoutAlign=" center">
+    Close
+    <mat-icon>close</mat-icon>
+  </div>
+</div>
+
+<div *ngFor="let item of cart">
+<div class="container marg" fxLayout="row">
+<div class="col-md-1 offset-8 marg-right">
+  <img class="cart-image" src="{{item.imageUrl}}" alt="">
+</div>
+<div class="col-md black-bold-text">{{item.title}}
+<div fxLayout="row">
+
+  <div class="black-text">Author:    <br>Year:    </div>
+  <div class="black-text">{{item.author}}<br>{{item.year}}</div>
+</div>
+</div>
+</div>
+
+<div class="container col-md-1 offset-8" fxLayout="row">
+<mat-icon inline="true">star</mat-icon>
+<mat-icon inline="true">star</mat-icon>
+<mat-icon inline="true">star</mat-icon>
+<mat-icon inline="true">star_half</mat-icon>
+<mat-icon inline="true">star_border</mat-icon>
+</div>
+
+<div class="container col-md-1 offset-8 price" fxLayout="row">
+{{item.price}} USD
+  </div>
+
+<div class="container marg">
+  <div class="col-md-4 offset-8 line1"></div>
+</div>
+</div>
+
+
+
+
+<div class="container marg">
+  <div class="col-md-4 offset-8">
+  <div div class="black-bold-text">Subtotal</div>
+<div class="black-bold-text">{{cost}} USD</div>
+</div>
+</div>
+
+<div class="container marg">
+  <div class="col-md-4 offset-8 line1"></div>
+</div>
+
+<div class="container marg">
+  <div class="col-md-4 offset-8" fxLayout="row"
+  fxLayoutAlign="space-between center">
+    <div class="black-bold-text">Continue shopping</div>
+    <button class="buybutton">Go to checkout</button>
+</div>

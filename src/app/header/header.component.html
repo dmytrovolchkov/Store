@@ -31,20 +31,24 @@
     </a></div>
   </div>
   </div>
-
-<div class="container white-line" fxLayout="row" fxLayoutAlign="none center">
+<div class="container line1"></div>
+<div class="container white-line-bold" fxLayout="row" fxLayoutAlign="none center">
   <div class="col-md-1">
-  <a class="green-text"
-  routerLinkActive="green-text-underline"
-  [routerLinkActiveOptions]="{exact: true}"
-  [routerLink]="['/home']"
-  >Freshnesecom</a></div>
+
+    <img src="\assets\Freshnesecom.png" alt=""
+    class="green-text"
+    routerLinkActive="green-text-underline"
+    [routerLinkActiveOptions]="{exact: true}"
+    [routerLink]="['/home']">
+
+</div>
   <div class="col-md-4 offset-3 search-form" fxLayoutAlign="space-between center">
     <button class="black-bold-text inline"
     mat-button [matMenuTriggerFor]="menu"
     >All categories
     <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
+    <div class="line"></div>
     <input class="black-bold-text" placeholder="Search products ..." value="">
 <mat-menu #menu="matMenu">
   <button mat-menu-item *ngFor="let p of cat">{{p}}</button>
@@ -57,7 +61,7 @@
     </div>
       <div class="col-md-1"
       [appTooltip]="count.counter+' items in the basket'">
-      <button mat-flat-button>
+      <button mat-flat-button [routerLink]="['/cart']">
         <mat-icon>shopping_cart</mat-icon>
       </button>
     </div>

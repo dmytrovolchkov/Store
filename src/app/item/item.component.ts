@@ -6,13 +6,13 @@ import { Paint, ItemListService } from '../services/item-list.service';
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css',
-            '../paint/paint.component.css']
+  styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
 
   item: Paint;
-  rev: Review;
+  rev: Review[];
+
 
   constructor(private route: ActivatedRoute,
     private items: ItemListService,
@@ -22,8 +22,8 @@ export class ItemComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.rev = this.review.getByIdRev(+params.id)
       this.item = this.items.getById(+params.id)
-      console.log('Params', this.items.getById(+params.id))
-      console.log('Params2', this.review.getByIdRev(+params.id))
+      console.log('Params', this.item)
+      console.log('Params2', this.rev)
     })
   }
 }

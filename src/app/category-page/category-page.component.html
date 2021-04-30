@@ -1,0 +1,13 @@
+<div class="container marg" fxLayout="row">
+  <div class="col-md-2 black-bold-text">
+    Top ranking paints
+    <div class="green-underline" *ngFor="let p of cat">{{p}}
+    </div>
+  </div>
+<div class="col-md" fxLayout="row">
+  <app-paint
+    *ngFor="let p of topPaints"
+    [paint]="p">
+  </app-paint>
+</div>
+</div>

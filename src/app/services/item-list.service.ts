@@ -6,6 +6,7 @@ export interface Paint {
   imageUrl: string;
   title: string;
   author: string;
+  category: string;
   year: number;
   price: number;
   sells: number;
@@ -30,6 +31,12 @@ export class ItemListService {
     this.loadElement$().subscribe(data => {
       this.paint = data});
     return this.paint.find(p => p.id === id);
+  }
+
+  getByCategory(category: string) {
+    this.loadElement$().subscribe(data => {
+      this.paint = data});
+    return this.paint.find(p => p.category === category);
   }
 
 }

@@ -1,6 +1,7 @@
 <mat-toolbar class="container white-line">
   <mat-toolbar-row>
-    <div class="col-md adress">Homepage / category / {{item.id}}</div>
+    <div class="col-md adress"
+    >Homepage / category / <span>{{item.id}}</span></div>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -63,14 +64,20 @@
 
 </div>
 
-<div *ngIf="rev !== undefined">
-  <p>Reviews:</p>
-  <p>Name: {{rev.name}}</p>
-  <p>Score: {{rev.score}}</p>
-  <p>Comment: {{rev.comment}}</p>
-</div>
 
-<app-form></app-form>
+<div class="container" fxLayout="row" >
+  <div class="col-md-6">
+    <app-form></app-form>
+  </div>
+  <div class="col-md-6 marg">
+    <div *ngFor="let item of rev">
+      <p>Reviews:</p>
+      <p>Name: {{item.name}}</p>
+      <p>Score: {{item.score}}</p>
+      <p>Comment: {{item.comment}}</p>
+    </div>
+  </div>
+</div>
 
 
   </div>

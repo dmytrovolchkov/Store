@@ -18,7 +18,6 @@ export class FormComponent implements OnInit {
   todoScore = '';
   todoComment = '';
 
-
   constructor(public reviews: ReviewService, public http: HttpClient) {
     this.reviews.loadReview$().subscribe(data => {
         this.re = data;
@@ -28,6 +27,7 @@ export class FormComponent implements OnInit {
   }
   ngOnInit(): void {
     this.form = new FormGroup({
+      id: new FormControl,
       name: new FormControl('',
         [Validators.required,
           Validators.minLength(3),

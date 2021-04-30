@@ -19,6 +19,7 @@ export class PaintComponent implements OnInit {
   }
   onBuy(): any {
     this.bought = 'In basket';
+    this.appCount.addToCart(this.paint.id);
   }
 
 }

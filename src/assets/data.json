@@ -1,104 +1,127 @@
 {
   "paints": [
-  {
-    "id": 1,
-    "imageUrl": "https://struchaieva.art/media/artworks/previews/Soul-of-Azori-I-150_100-cm_Al9Axr5.jpeg",
-    "title": "Azori Soul",
-    "author": "James Pello",
-    "year": 2018,
-    "price": 171519,
-    "sells": 5,
-    "rating": 5,
-    "popular": 347
-  },
-  {
-    "id": 2,
-    "imageUrl": "https://struchaieva.art/media/artworks/previews/Meeting-of-the-Giants-min_oJYZdGB.jpeg",
-    "title": "Giants Meet",
-    "author": "Paul Mann",
-    "year": 2015,
-    "price": 116025,
-    "sells": 36,
-    "rating": 3,
-    "popular": 3332
-  },
-  {
-    "id": 3,
-    "imageUrl": "https://struchaieva.art/media/artworks/previews/5_o7679ex.jpeg",
-    "title": "Flower Eye",
-    "author": "Jane Subb",
-    "year": 2019,
-    "price": 195900,
-    "sells": 13,
-    "rating": 1,
-    "popular": 3423
-  },
-  {
-    "id": 4,
-    "imageUrl": "https://struchaieva.art/media/artworks/previews/3_YjENyDZ.jpeg",
-    "title": "Body Music",
-    "author": "Paul Mann",
-    "year": 2015,
-    "price": 386629,
-    "sells": 2,
-    "rating": 6,
-    "popular": 143
-  },
-  {
-    "id": 5,
-    "imageUrl": "https://struchaieva.art/media/artworks/previews/gggg-1_NRPv2zN.jpeg",
-    "title": "Dialog",
-    "author": "James Pello",
-    "year": 2020,
-    "price": 414375,
-    "sells": 10,
-    "rating": 4,
-    "popular": 13413
-  },
-  {
-    "id": 6,
-    "imageUrl": "https://struchaieva.art/media/artworks/previews/cvetochnaya-rapsodia_LN6t4IC.jpeg",
-    "title": "Flower Rapsody",
-    "author": "Jane Subb",
-    "year": 2016,
-    "price": 643906,
-    "sells": 11,
-    "rating": 2,
-    "popular": 2013
-  }
-],
-
+    {
+      "id": 1,
+      "imageUrl": "https://struchaieva.art/media/artworks/previews/Soul-of-Azori-I-150_100-cm_Al9Axr5.jpeg",
+      "title": "Azori Soul",
+      "author": "James Pello",
+      "category": "Scenery",
+      "year": 2018,
+      "price": 171519,
+      "sells": 5,
+      "rating": 5,
+      "popular": 347
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://struchaieva.art/media/artworks/previews/Meeting-of-the-Giants-min_oJYZdGB.jpeg",
+      "title": "Giants Meet",
+      "author": "Paul Mann",
+      "category": "Scenery",
+      "year": 2015,
+      "price": 116025,
+      "sells": 36,
+      "rating": 3,
+      "popular": 3332
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://struchaieva.art/media/artworks/previews/5_o7679ex.jpeg",
+      "title": "Flower Eye",
+      "author": "Jane Subb",
+      "category": "Scenery",
+      "year": 2019,
+      "price": 195900,
+      "sells": 13,
+      "rating": 1,
+      "popular": 3423
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://struchaieva.art/media/artworks/previews/3_YjENyDZ.jpeg",
+      "title": "Body Music",
+      "author": "Paul Mann",
+      "category": "Scenery",
+      "year": 2015,
+      "price": 386629,
+      "sells": 2,
+      "rating": 6,
+      "popular": 143
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://struchaieva.art/media/artworks/previews/gggg-1_NRPv2zN.jpeg",
+      "title": "Dialog",
+      "author": "James Pello",
+      "category": "Scenery",
+      "year": 2020,
+      "price": 414375,
+      "sells": 10,
+      "rating": 4,
+      "popular": 13413
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://struchaieva.art/media/artworks/previews/cvetochnaya-rapsodia_LN6t4IC.jpeg",
+      "title": "Flower Rapsody",
+      "author": "Jane Subb",
+      "category": "Scenery",
+      "year": 2016,
+      "price": 643906,
+      "sells": 11,
+      "rating": 2,
+      "popular": 2013
+    }
+  ],
   "categories": [
     "Scenery",
     "Portrait",
     "Still life",
     "Cubism",
     "Seascape"
-],
-
+  ],
   "reviews": [
-  {
-    "id": 1,
-    "name": "Ivan Kasper",
-    "email": "van@gmail.com",
-    "score": 5,
-    "comment": "Good"
-  },
-  {
-    "id": 3,
-    "name": "Paul White",
-    "email": "san@gmail.com",
-    "score": 4,
-    "comment": "Nice"
-  },
-  {
-    "id": 6,
-    "name": "Gregory Petrov",
-    "email": "scccc@gmail.com",
-    "score": 4,
-    "comment": "Nice"
-  }
-
-]
-
+    {
+      "id": 1,
+      "name": "Ivan Kasper",
+      "email": "van@gmail.com",
+      "score": 5,
+      "comment": "Good"
+    },
+    {
+      "id": 3,
+      "name": "Paul White",
+      "email": "san@gmail.com",
+      "score": 4,
+      "comment": "Nice"
+    },
+    {
+      "id": 3,
+      "name": "Paul Black",
+      "email": "sanset@gmail.com",
+      "score": 4,
+      "comment": "Good"
+    },
+    {
+      "id": 6,
+      "name": "Gregory Petrov",
+      "email": "scccc@gmail.com",
+      "score": 4,
+      "comment": "Nice"
+    },
+    {
+      "name": "asdas",
+      "email": "asda@sfdjk.com",
+      "score": "4",
+      "comment": "",
+      "id": 7
+    },
+    {
+      "name": "asdas",
+      "email": "asd@dsf",
+      "score": "3",
+      "comment": "",
+      "id": 8
+    }
+  ]
 }

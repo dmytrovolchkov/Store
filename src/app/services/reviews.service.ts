@@ -29,7 +29,7 @@ export class ReviewService {
   getByIdRev(id: number) {
     this.loadReview$().subscribe(data => {
       this.post = data});
-    return this.post.find(p => p.id === id);
+    return this.post.filter(p => p.id === id);
   }
 
 }

@@ -30,21 +30,14 @@
   </div>
 </div>
 <div class="container footer-marg">
-    <p class="black-bold-text">Product tags</p>
-    <div class="footer-tag">Beans</div>
-    <div class="footer-tag">Berries</div>
-    <div class="footer-tag">Apples</div>
-    <div class="footer-tag">Garlic</div>
-    <div class="footer-tag">Mushrooms</div>
-    <div class="footer-tag">Tomatoes</div>
-    <div class="footer-tag">Cherries</div>
-    <div class="footer-tag">Meat</div>
-    <div class="footer-tag">Fish</div>
-    <div class="footer-tag">Fresh food</div>
-    <div class="footer-tag">Green</div>
-    <div class="footer-tag">Fruits</div>
+    <p class="black-bold-text col-md-12">Product tags</p>
+    <div class="col-md-12">
+      <div class="footer-tag" *ngFor="let t of tags">{{t}}</div>
+    </div>
+
+
 </div>
 <div class="container footer-marg">
-  <span>Copyright © 2021</span>
+  <span class="col-md-12">Copyright © 2021 petrbilek.com</span>
 </div>
 

@@ -1,3 +1,5 @@
+import { CartPageModule } from './cart-page/cart-page.module';
+import { ItemModule } from './item/item.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -12,19 +14,19 @@ import { MatCardModule } from '@angular/material/card';
 import { PhonePipePipe } from './pipes/phone-pipe.pipe';
 import { MatInputModule } from '@angular/material/input';
 import { ToolTipDirective } from './directives/tool-tip.directive';
-import { FormComponent } from './form/form.component';
+import { FormModule } from './form/form.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { ItemComponent } from './item/item.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorPageModule } from './error-page/error-page.module';
 import { AboutPageModule } from './about-page/about-page.module';
 import { CareersPageModule } from './careers-page/careers-page.module';
 import { HomeModule } from './home/home.module';
+import { CategoryPageComponent } from './category-page/category-page.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,8 @@ import { HomeModule } from './home/home.module';
     ToolTipDirective,
     HeaderComponent,
     PhonePipePipe,
-    FormComponent,
-    ItemComponent,
     FooterComponent,
+    CategoryPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +58,9 @@ import { HomeModule } from './home/home.module';
     CareersPageModule,
     ErrorPageModule,
     HomeModule,
+    FormModule,
+    ItemModule,
+    CartPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
