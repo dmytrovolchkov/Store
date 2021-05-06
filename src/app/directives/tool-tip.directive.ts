@@ -21,11 +21,11 @@ export class ToolTipDirective {
   show(): any {
     this.create();
     this.setPosition();
-    this.renderer.addClass(this.tooltip, 'ng-tooltip-show');
+    this.renderer.addClass(this.tooltip, 'ng-tooltip__show');
   }
 
   hide(): any {
-    this.renderer.removeClass(this.tooltip, 'ng-tooltip-show');
+    this.renderer.removeClass(this.tooltip, 'ng-tooltip__show');
     window.setTimeout(() => {
       this.renderer.removeChild(document.body, this.tooltip);
       this.tooltip = null;

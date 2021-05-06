@@ -1,11 +1,13 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit, Output} from '@angular/core';
 import {CounterService} from '../services/counter.service';
 import {CategoriesService} from '../services/categories.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css',],
+  //changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class HeaderComponent implements OnInit {

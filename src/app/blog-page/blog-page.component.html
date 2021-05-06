@@ -1,0 +1,10 @@
+<div class="container div__content__margin" fxLayoutAlign="start center">
+  <form class="example-form">
+    <mat-form-field class="example-full-width" fxFlexOffset="5">
+      <mat-label>Phone number</mat-label>
+      <input (keyup.enter)="onInput($event)"
+             matInput placeholder="+380 (XX) XXX-XX-XX">
+    </mat-form-field>
+  </form>
+  <span fxFlexOffset="5">{{inputPhone | phonePipe}}</span>
+</div>

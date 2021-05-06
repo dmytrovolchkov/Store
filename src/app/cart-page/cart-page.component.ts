@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { count } from 'rxjs/operators';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CounterService } from '../services/counter.service';
 import { ItemListService, Paint } from '../services/item-list.service';
 
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
-  styleUrls: ['./cart-page.component.css']
+  styleUrls: ['./cart-page.component.css'],
+  //changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CartPageComponent implements OnInit {

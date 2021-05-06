@@ -1,3 +1,5 @@
+import { CategoryPageModule } from './category-page/category-page.module';
+import { BlogPageModule } from './blog-page/blog-page.module';
 import { CartPageModule } from './cart-page/cart-page.module';
 import { ItemModule } from './item/item.module';
 import { NgModule } from '@angular/core';
@@ -11,10 +13,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { PhonePipePipe } from './pipes/phone-pipe.pipe';
 import { MatInputModule } from '@angular/material/input';
 import { ToolTipDirective } from './directives/tool-tip.directive';
-import { FormModule } from './form/form.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
@@ -26,18 +26,20 @@ import { ErrorPageModule } from './error-page/error-page.module';
 import { AboutPageModule } from './about-page/about-page.module';
 import { CareersPageModule } from './careers-page/careers-page.module';
 import { HomeModule } from './home/home.module';
-import { CategoryPageComponent } from './category-page/category-page.component';
+import { NgxsModule } from '@ngxs/store';
+import { ItemsState } from './shared/app.state';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolTipDirective,
     HeaderComponent,
-    PhonePipePipe,
     FooterComponent,
-    CategoryPageComponent,
   ],
   imports: [
+    NgxsModule.forRoot([
+      ItemsState,
+    ]),
     BrowserModule,
     FormsModule,
     FlexLayoutModule,
@@ -58,9 +60,10 @@ import { CategoryPageComponent } from './category-page/category-page.component';
     CareersPageModule,
     ErrorPageModule,
     HomeModule,
-    FormModule,
     ItemModule,
     CartPageModule,
+    BlogPageModule,
+    CategoryPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,31 +1,38 @@
 import { CategoriesService } from './../services/categories.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemListService, Paint } from '../services/item-list.service';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-category-page',
   templateUrl: './category-page.component.html',
-  styleUrls: ['./category-page.component.css']
+  styleUrls: ['./category-page.component.css'],
+  //changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoryPageComponent implements OnInit {
 
-  topPaints: Paint[];
+  catPaints: Paint;
   cat: any;
 
   constructor(public items: ItemListService,
-    public category: CategoriesService) {
+    public category: CategoriesService,
+    private route: ActivatedRoute) {
 
     this.category.loadCategory$().subscribe(data => {
       this.cat = data;
-      console.log(this.cat);
+      console.log('cat', this.cat);
     } );
+
   }
 
   ngOnInit(): void {
-    this.items.loadElement$().subscribe(data => {
-      this.topPaints = (data.slice(0)).sort((a, b) => (a.rating < b.rating ? -1 : 1));
-      console.log(data);
-    } );
+
+    this.route.params.subscribe((params: Params) => {
+      this.catPaints = this.items.getByCategory(params.category)
+      console.log('Par', this.items)
+});
+
   }
+
 
 }

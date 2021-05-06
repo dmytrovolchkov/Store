@@ -7,7 +7,7 @@
       "author": "James Pello",
       "category": "Scenery",
       "year": 2018,
-      "price": 171519,
+      "price": 249.99,
       "sells": 5,
       "rating": 5,
       "popular": 347
@@ -19,7 +19,7 @@
       "author": "Paul Mann",
       "category": "Scenery",
       "year": 2015,
-      "price": 116025,
+      "price": 124.99,
       "sells": 36,
       "rating": 3,
       "popular": 3332
@@ -31,7 +31,7 @@
       "author": "Jane Subb",
       "category": "Scenery",
       "year": 2019,
-      "price": 195900,
+      "price": 195.9,
       "sells": 13,
       "rating": 1,
       "popular": 3423
@@ -43,7 +43,7 @@
       "author": "Paul Mann",
       "category": "Scenery",
       "year": 2015,
-      "price": 386629,
+      "price": 386.9,
       "sells": 2,
       "rating": 6,
       "popular": 143
@@ -55,7 +55,7 @@
       "author": "James Pello",
       "category": "Scenery",
       "year": 2020,
-      "price": 414375,
+      "price": 414.3,
       "sells": 10,
       "rating": 4,
       "popular": 13413
@@ -67,10 +67,130 @@
       "author": "Jane Subb",
       "category": "Scenery",
       "year": 2016,
-      "price": 643906,
+      "price": 645,
       "sells": 11,
       "rating": 2,
       "popular": 2013
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://images.template.net/wp-content/uploads/2017/02/06233126/Still-Life-Fruits-Painting.jpg",
+      "title": "Life Fruits",
+      "author": "Josh Leone",
+      "category": "Still life",
+      "year": 2020,
+      "price": 125,
+      "sells": 3,
+      "rating": 10,
+      "popular": 222
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://patricksaunders.com/paintings/still-life/img/patrick-saunders-painting-still-life-late-afternoon.jpg",
+      "title": "Late Afternoon",
+      "author": "Patrick Saunders",
+      "category": "Still life",
+      "year": 2019,
+      "price": 505,
+      "sells": 30,
+      "rating": 8,
+      "popular": 20113
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://patricksaunders.com/paintings/still-life/img/patrick-saunders-painting-floral-trio.jpg",
+      "title": "Floral Trio",
+      "author": "Patrick Saunders",
+      "category": "Still life",
+      "year": 2017,
+      "price": 499.99,
+      "sells": 23,
+      "rating": 8,
+      "popular": 1425
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://images.template.net/wp-content/uploads/2017/02/06233147/Abstract-Still-Life-Painting.jpg",
+      "title": "Abstract Still",
+      "author": "Gordon Vreak",
+      "category": "Still life",
+      "year": 2019,
+      "price": 225,
+      "sells": 14,
+      "rating": 8,
+      "popular": 1664
+    },
+    {
+      "id": 11,
+      "imageUrl": "https://images.template.net/wp-content/uploads/2017/02/DIY-Still-Life-Painting1.jpg",
+      "title": "Life Still",
+      "author": "James Rives",
+      "category": "Still life",
+      "year": 2021,
+      "price": 114.99,
+      "sells": 20,
+      "rating": 8,
+      "popular": 2000
+    },
+    {
+      "id": 12,
+      "imageUrl": "https://images.template.net/wp-content/uploads/2017/02/06233134/Realistic-Still-Life-Painting.jpg",
+      "title": "Realistic Still",
+      "author": "James Rives",
+      "category": "Still life",
+      "year": 2020,
+      "price": 211.2,
+      "sells": 255,
+      "rating": 8,
+      "popular": 3230
+    },
+    {
+      "id": 13,
+      "imageUrl": "https://i.pinimg.com/564x/6e/8b/29/6e8b29b8c8abb578089d861af3f5308c.jpg",
+      "title": "Blue Crown Sea",
+      "author": "Josh Leone",
+      "category": "Seascape",
+      "year": 2017,
+      "price": 110,
+      "sells": 15,
+      "rating": 8,
+      "popular": 126
+    },
+    {
+      "id": 14,
+      "imageUrl": "https://i.pinimg.com/564x/2c/4b/b5/2c4bb5a2cac2b0bdeaffc5d9cbbf7c37.jpg",
+      "title": "Brown Days",
+      "author": "Kolin Plays",
+      "category": "Seascape",
+      "year": 2019,
+      "price": 129.99,
+      "sells": 21,
+      "rating": 8,
+      "popular": 1234
+    },
+    {
+      "id": 15,
+      "imageUrl": "https://i.pinimg.com/564x/96/3c/66/963c663e63df7c7f3e58bb18cf2ad72b.jpg",
+      "title": "Night Summer",
+      "author": "Kolin Plays",
+      "category": "Seascape",
+      "year": 2019,
+      "price": 129.99,
+      "sells": 65,
+      "rating": 8,
+      "popular": 1655
+    },
+    {
+      "id": 16,
+      "imageUrl": "https://i.pinimg.com/564x/90/8b/68/908b68a50f973a9e1dc591103ad1aefc.jpg",
+      "title": "Purple Life",
+      "author": "Josh Leone",
+      "category": "Seascape",
+      "year": 2020,
+      "price": 322,
+      "sells": 12,
+      "rating": 8,
+      "popular": 123
     }
   ],
   "categories": [
@@ -83,13 +203,15 @@
   "reviews": [
     {
       "id": 1,
+      "num": 1,
       "name": "Ivan Kasper",
       "email": "van@gmail.com",
       "score": 5,
       "comment": "Good"
     },
     {
-      "id": 3,
+      "id": 2,
+      "num": 3,
       "name": "Paul White",
       "email": "san@gmail.com",
       "score": 4,
@@ -97,31 +219,51 @@
     },
     {
       "id": 3,
+      "num": 3,
       "name": "Paul Black",
       "email": "sanset@gmail.com",
       "score": 4,
       "comment": "Good"
     },
     {
-      "id": 6,
+      "id": 4,
+      "num": 6,
       "name": "Gregory Petrov",
       "email": "scccc@gmail.com",
       "score": 4,
       "comment": "Nice"
     },
     {
-      "name": "asdas",
-      "email": "asda@sfdjk.com",
-      "score": "4",
-      "comment": "",
-      "id": 7
+      "id": 5,
+      "num": 3,
+      "name": "csa",
+      "email": "asfas@dfads",
+      "score": "1",
+      "comment": ""
     },
     {
+      "id": 6,
+      "num": 3,
+      "name": "sdsa",
+      "email": "asd@dsf",
+      "score": "5",
+      "comment": " GoodGoodGoodGoodGoodGood"
+    },
+    {
+      "id": 7,
+      "num": 2,
       "name": "asdas",
       "email": "asd@dsf",
-      "score": "3",
-      "comment": "",
-      "id": 8
+      "score": "2",
+      "comment": ""
+    },
+    {
+      "id": 8,
+      "num": 12,
+      "name": "Dmitry",
+      "email": "sdfsd@gmail.com",
+      "score": "5",
+      "comment": "Nice Product"
     }
   ]
 }

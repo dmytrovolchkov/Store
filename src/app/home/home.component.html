@@ -1,8 +1,10 @@
 
-  <div class="container marg" fxLayout="row" fxLayoutAlign="space-between start">
-    <div class="col-md-3 black-bold-text">
+  <div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
+    <div class="col-md-3 div__text__bold">
       Bestsellerts
-      <div class="green-underline" *ngFor="let p of cat">{{p}}
+      <div class="div__text__green-underline div__content__pointer"
+      *ngFor="let p of cat"
+      [routerLink]="['/',p]">{{p}}
       </div>
     </div>
     <app-paint class="col-md"
@@ -11,11 +13,12 @@
     </app-paint>
   </div>
 
-
-  <div class="container marg" fxLayout="row" fxLayoutAlign="space-between start">
-    <div class="col-md-3 black-bold-text">
+  <div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
+    <div class="col-md-3 div__text__bold">
       Top ranking paints
-      <div class="green-underline" *ngFor="let p of cat">{{p}}
+      <div class="div__text__green-underline div__content__pointer"
+      *ngFor="let p of cat"
+      [routerLink]="['/',p]">{{p}}
       </div>
     </div>
     <app-paint class="col-md"
@@ -24,11 +27,12 @@
     </app-paint>
   </div>
 
-
-  <div class="container marg" fxLayout="row" fxLayoutAlign="space-between start">
-    <div class="col-md-3 black-bold-text">
+  <div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
+    <div class="col-md-3 div__text__bold">
       Most popular paints
-      <div class="green-underline" *ngFor="let p of cat">{{p}}
+      <div class="div__text__green-underline div__content__pointer"
+      *ngFor="let p of cat"
+      [routerLink]="['/',p]">{{p}}
       </div>
     </div>
     <app-paint class="col-md"

@@ -1,57 +1,61 @@
-<div class="container white-line" fxLayout="row" fxLayoutAlign="space-between center">
+<div class="container line__white" fxLayout="row" fxLayoutAlign="space-between center">
   <div class="col-md-5" fxLayout="row" fxLayoutAlign="space-between center">
-    <a class="green-text"
-    routerLinkActive="green-text-underline"
-    [routerLink]="['/form']">Chat with us</a>
-    <div class="black-text">
-      <a class="black-text" href="tel:+380993232222">
+    <div>
+    <a class="div__text__green"
+    routerLinkActive="div__text__green-underline"
+    [routerLink]="['/error']">Chat with us</a></div>
+    <div class="div__text__simple">
+      <a class="div__text__simple" href="tel:+380993232222">
       +38 (099) 323-22-22
       </a>
     </div>
-    <div class="black-text">
-      <a class="black-text" href="mailto:info@freshnesecom.com">
+    <div class="div__text__simple">
+      <a class="div__text__simple" href="mailto:info@freshnesecom.com">
       info@freshnesecom.com
       </a>
     </div>
   </div>
   <div class="col-md-3" fxLayout="row" fxLayoutAlign="space-between center">
-    <a class="green-text"
-    routerLinkActive="green-text-underline"
-    [routerLinkActiveOptions]="{exact: true}"
-    [routerLink]="['/']">Blog</a>
     <div>
-    <a class="green-text"
-    routerLinkActive="green-text-underline"
+    <a class="div__text__green"
+    routerLinkActive="div__text__green-underline"
+    [routerLinkActiveOptions]="{exact: true}"
+    [routerLink]="['/blog']">Blog</a></div>
+    <div>
+    <a class="div__text__green"
+    routerLinkActive="div__text__green-underline"
     [routerLink]="['/about']">About us
   </a></div>
     <div>
-    <a class="green-text"
-    routerLinkActive="green-text-underline"
+    <a class="div__text__green"
+    routerLinkActive="div__text__green-underline"
     [routerLink]="['/careers']">Careers
     </a></div>
   </div>
   </div>
-<div class="container line1"></div>
-<div class="container white-line-bold" fxLayout="row" fxLayoutAlign="none center">
-  <div class="col-md-1">
+<div class="container line"></div>
+<div class="container line__white" fxLayout="row" fxLayoutAlign="none center">
+  <div class="col-md-1 div__content__pointer">
 
     <img src="\assets\Freshnesecom.png" alt=""
-    class="green-text"
-    routerLinkActive="green-text-underline"
+    class="div__text__green"
+    routerLinkActive="div__text__green-underline"
     [routerLinkActiveOptions]="{exact: true}"
     [routerLink]="['/home']">
 
 </div>
-  <div class="col-md-4 offset-3 search-form" fxLayoutAlign="space-between center">
-    <button class="black-bold-text inline"
+  <div class="col-md-4 offset-3 search-form"
+  fxLayoutAlign=" center">
+    <button class="div__text__bold div__content__inline"
     mat-button [matMenuTriggerFor]="menu"
     >All categories
     <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
     <div class="line"></div>
-    <input class="black-bold-text" placeholder="Search products ..." value="">
+    <input placeholder="Search products ..." value="">
 <mat-menu #menu="matMenu">
-  <button mat-menu-item *ngFor="let p of cat">{{p}}</button>
+  <button mat-menu-item *ngFor="let p of cat"
+  [routerLink]="['/',p]">{{p}}</button>
 </mat-menu>
       </div>
       <div class="col-md-1 offset-2">
@@ -67,8 +71,8 @@
     </div>
 </div>
 
-<div class="container gray-line" fxLayout="row" fxLayoutAlign="start center">
-    <button class="black-bold-text"
+<div class="container line__gray" fxLayout="row" fxLayoutAlign="start center">
+    <button class="div__text__bold"
     mat-button [matMenuTriggerFor]="menu1"
             *ngFor="let p of cat">{{p}}
       <mat-icon>keyboard_arrow_down</mat-icon>

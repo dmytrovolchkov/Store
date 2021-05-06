@@ -1,21 +1,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <mat-card class="form" align="center">
-  <img [routerLink]="['/home', paint.id]" src="{{paint.imageUrl}}" alt="" class="paint">
+  <img [routerLink]="['/home', paint.id]" src="{{paint.imageUrl}}" alt="" class="div__paint div__content__pointer">
   <mat-card-header fxLayout="column" fxLayoutAlign=" start">
-    <div class="title"><br>{{paint.title}}</div>
-    <p class="text">by {{paint.author}}</p>
+    <div class="div__text__title"><br>{{paint.title}}</div>
+    <p class="div__text__gray">by {{paint.author}}</p>
   </mat-card-header>
   <mat-card-content fxLayout="row"
                     fxLayoutAlign="space-around center">
   </mat-card-content>
-  <div class="container bottom" fxLayout="row" fxLayoutAlign="space-between center">
-    <div class="black-bold-text">{{paint.price}} USD</div>
+  <div class="container div__content__bottom" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="div__text__bold">{{paint.price.toFixed(2)}} USD</div>
     <div fxLayoutAlign=" center">
-    <button class="buybutton"
+    <button class="div__buybutton"
             (click)="onBuy();appCount.increase()"
-            onclick="this.className = 'hide'"
+            onclick="this.className = 'div__content__hide'"
     >Buy now</button>
-    <div class="marg-right">{{bought}}</div>
+    <div class="div__content__margin-right">{{bought}}</div>
   </div>
   </div>
 </mat-card>

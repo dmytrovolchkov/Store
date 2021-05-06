@@ -3,9 +3,10 @@ import {HttpClient} from '@angular/common/http';
 
 export interface Review {
   id: number;
+  num: number;
   name: string;
   email: string;
-  score: string;
+  score: number;
   comment: string;
 }
 
@@ -29,7 +30,7 @@ export class ReviewService {
   getByIdRev(id: number) {
     this.loadReview$().subscribe(data => {
       this.post = data});
-    return this.post.filter(p => p.id === id);
+    return this.post.filter(p => p.num === id);
   }
 
 }
