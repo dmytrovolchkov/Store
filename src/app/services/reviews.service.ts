@@ -1,14 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
-export interface Review {
-  id: number;
-  num: number;
-  name: string;
-  email: string;
-  score: number;
-  comment: string;
-}
+import { Review } from '../review/review.state';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,18 +12,18 @@ export class ReviewService {
 
   constructor(private http: HttpClient) {}
 
-  loadReview$(): any {
-    return this.http.get('http://localhost:3000/reviews');
-  }
+  // loadReview$(): any {
+  //   return this.http.get('http://localhost:3000/reviews')
+  // }
 
-  addReview$(): any {
-    return this.http.post<Review>('http://localhost:3000/reviews', this.post);
-  }
+  // // addReview$(review: Review): Observable<Review>{
+  // //   return this.http.post<Review>('http://localhost:3000/reviews', review)
+  // // }
 
-  getByIdRev(id: number) {
-    this.loadReview$().subscribe(data => {
-      this.post = data});
-    return this.post.filter(p => p.num === id);
-  }
+  // getByIdRev(id: number) {
+  //   this.loadReview$().subscribe(data => {
+  //     this.post = data});
+  //   return this.post.filter(p => p.num === id)
+  // }
 
 }

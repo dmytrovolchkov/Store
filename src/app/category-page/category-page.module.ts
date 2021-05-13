@@ -1,4 +1,3 @@
-import { PhonePipePipe } from './../pipes/phone-pipe.pipe';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';

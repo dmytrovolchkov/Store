@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -23,7 +24,7 @@ export class ItemListService {
 
   constructor(private http: HttpClient) {}
 
-  loadElement$(): any {
+  loadElement$(): Observable<Paint []> {
     return this.http.get<Paint[]>('http://localhost:3000/paints');
   }
 

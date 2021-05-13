@@ -1,7 +1,10 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit, Output} from '@angular/core';
 import {CounterService} from '../services/counter.service';
-import {CategoriesService} from '../services/categories.service';
 import { Router } from '@angular/router';
+import { Select, Store } from '@ngxs/store';
+import { getCategory } from './../category-page/category.action';
+import { CategoryState } from './../category-page/category.state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -14,19 +17,23 @@ export class HeaderComponent implements OnInit {
 
   cat: any;
 
-  constructor(public count: CounterService,
-    public category: CategoriesService,
-    private router: Router) {
-    this.category.loadCategory$().subscribe(data => {
-      this.cat = data;
-      console.log(this.cat);
-    } );
+  @Select(CategoryState.getCategory) getCategory$!: Observable<String[]>
 
+  constructor(public count: CounterService,
+    // public category: CategoriesService,
+    private router: Router,
+    public store: Store,) {
+
+      this.getCategory$.subscribe(data => {
+        this.cat = data;
+        console.log('Category ', this.cat);
+      })
   }
 
   @Input() deviceXs: boolean;
 
   ngOnInit(): void {
+
   }
 
   goToHomePage () {

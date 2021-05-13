@@ -1,10 +1,15 @@
+import { getReviewById } from './../review/review.action';
 import { CounterService } from './../services/counter.service';
-import { Review, ReviewService } from './../services/reviews.service';
+import { ReviewService } from './../services/reviews.service';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Paint, ItemListService } from '../services/item-list.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { Review, ReviewState } from '../review/review.state';
+import { addReview, getReview, getReviewById } from '../review/review.action';
 
 @Component({
   selector: 'app-item',
@@ -15,31 +20,38 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ItemComponent implements OnInit {
 
-  form: FormGroup;
-  rev: Review[];
-  rev2: Review[];
-  todoName = '';
-  todoEmail = '';
-  todoScore: number;
-  todoComment = '';
-  item: Paint;
-  num: number;
-  i = 0;
+  form: FormGroup
+  post: Review
+  rev: Review[]
+  rev2: Review[]
+  todoName = ''
+  todoEmail = ''
+  todoScore: number
+  todoComment = ''
+  item: Paint
+  num: number
+  i = 0
+
+  @Select(ReviewState.getReview) getReview$!: Observable<Review[]>
+  @Select(ReviewState.getReviewById) getReviewById$!: Observable<Review[]>
 
   constructor(private route: ActivatedRoute,
     private items: ItemListService,
     private review: ReviewService,
     public http: HttpClient,
-    public appCount: CounterService) {
+    public appCount: CounterService,
+    public store: Store) {
 
-    this.review.loadReview$().subscribe(data => {
-      this.rev2 = data;
-      console.log('rev2 ', data);
+      this.getReview$.subscribe(data => {
+      this.rev2 = data
+      console.log('rev2 ', data)
     }
   );
     }
 
   ngOnInit(): void {
+
+    this.store.dispatch(new getReview())
 
     this.form = new FormGroup({
       name: new FormControl('',
@@ -53,10 +65,11 @@ export class ItemComponent implements OnInit {
         Validators.required),
       comment: new FormControl('',
         Validators.maxLength(1000))
-    });
+    })
 
     this.route.params.subscribe((params: Params) => {
-      this.rev = this.review.getByIdRev(+params.id)
+      this.rev = this.store.dispatch(new getReviewById(+params.id))
+      // this.rev = this.review.getByIdRev(+params.id)
       this.item = this.items.getById(+params.id)
       console.log('Params', this.item)
       console.log('Params2', this.rev)
@@ -73,11 +86,11 @@ export class ItemComponent implements OnInit {
 
   submit(): any {
     if (this.form.valid) {
-      const formData = {...this.form.value};
-      this.form.reset();
-      this.form.markAsPristine();
-      this.form.markAsUntouched();
-      console.log('Form data ', formData);
+      const formData = {...this.form.value}
+      this.form.reset()
+      this.form.markAsPristine()
+      this.form.markAsUntouched()
+      console.log('Form data ', formData)
     }
   }
 
@@ -85,12 +98,12 @@ export class ItemComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.item = this.items.getById(+params.id)
       console.log('Paramsssssssssss', this.item) });
-      this.review.loadReview$().subscribe(data => {
+      this.getReview$.subscribe(data => {
         this.rev2 = data;
         console.log('rev2222 ', this.rev2.length);
       }
     );
-      const post: Review = {
+      this.post = {
         id: this.rev2.length + 1,
         num: this.item.id,
         name: this.todoName,
@@ -98,11 +111,14 @@ export class ItemComponent implements OnInit {
         score: this.todoScore,
         comment: this.todoComment
       };
-    this.http.post<Review>('http://localhost:3000/reviews', post)
-      .subscribe(data => {
-        console.log('Form data 2', data);
-        }
-      );
+
+      this.store.dispatch(new addReview(this.post))
+
+    // this.http.post<Review>('http://localhost:3000/reviews', post)
+    //   .subscribe(data => {
+    //     console.log('Form data 2', data);
+    //     }
+    //   );
   }
 
 

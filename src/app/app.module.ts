@@ -1,3 +1,6 @@
+import { PaintState } from './paint/paint.state';
+import { ReviewState } from './review/review.state';
+import { CategoryState } from './category-page/category.state';
 import { CategoryPageModule } from './category-page/category-page.module';
 import { BlogPageModule } from './blog-page/blog-page.module';
 import { CartPageModule } from './cart-page/cart-page.module';
@@ -27,7 +30,8 @@ import { AboutPageModule } from './about-page/about-page.module';
 import { CareersPageModule } from './careers-page/careers-page.module';
 import { HomeModule } from './home/home.module';
 import { NgxsModule } from '@ngxs/store';
-import { ItemsState } from './shared/app.state';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 @NgModule({
   declarations: [
@@ -38,8 +42,12 @@ import { ItemsState } from './shared/app.state';
   ],
   imports: [
     NgxsModule.forRoot([
-      ItemsState,
+      PaintState,
+      CategoryState,
+      ReviewState
     ]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
     BrowserModule,
     FormsModule,
     FlexLayoutModule,
