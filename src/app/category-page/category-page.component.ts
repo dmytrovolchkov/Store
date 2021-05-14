@@ -1,29 +1,32 @@
-// import { CategoriesService } from './../services/categories.service';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ItemListService, Paint } from '../services/item-list.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { getCategory } from './category.action';
 import { CategoryState } from './category.state';
 import { Observable } from 'rxjs';
+import { Paint, PaintState } from '../paint/paint.state';
+import { fetchPaint } from '../paint/paint.action';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-category-page',
   templateUrl: './category-page.component.html',
   styleUrls: ['./category-page.component.css'],
-  //changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoryPageComponent implements OnInit {
 
-  catPaints: Paint;
-  cat: any;
-  subscription: any;
+  catPaints: Paint[]
+  cat: any
+  category: string
+  subscription: any
 
   @Select(CategoryState.getCategory) getCategory$!: Observable<String[]>
+  @Select(PaintState.getPaint) getPaint$!: Observable<Paint[]>
 
-  constructor(public items: ItemListService,
-              private route: ActivatedRoute,
-              public store: Store,) {
+  constructor(private route: ActivatedRoute,
+              public store: Store,
+              private title: Title) {
 
     this.subscription = this.getCategory$.subscribe(data => {
       this.cat = data;
@@ -32,14 +35,15 @@ export class CategoryPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.store.dispatch(new getCategory())
-
     this.route.params.subscribe((params: Params) => {
-      this.catPaints = this.items.getByCategory(params.category)
-      console.log('Par', this.items)
+      this.getPaint$.subscribe(data => {
+        this.catPaints = data.filter(p => p.category == params.category)
+        this.category = params.category
+        this.title.setTitle(this.category)
+      })
+      console.log('Par', this.catPaints)
 });
-
-  }
+}
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

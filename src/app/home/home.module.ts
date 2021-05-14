@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
   declarations: [
     PaintComponent,
     HomeComponent,
-
   ],
   imports: [
     RouterModule.forChild([{

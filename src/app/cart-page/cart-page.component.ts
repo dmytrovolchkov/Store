@@ -1,12 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { Paint, PaintState } from '../paint/paint.state';
 import { CounterService } from '../services/counter.service';
-import { ItemListService, Paint } from '../services/item-list.service';
 
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css'],
-  //changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CartPageComponent implements OnInit {
@@ -14,13 +17,20 @@ export class CartPageComponent implements OnInit {
   cart: Paint[] = [];
   cost = 0;
 
+  @Select(PaintState.getPaint) getPaint$!: Observable<Paint[]>
+
   constructor(public appCount: CounterService,
-    private items: ItemListService) { }
+    private title: Title) {
+      this.title.setTitle('Cart')
+    }
 
   ngOnInit(): void {
     for (var i in this.appCount.ids) {
-    this.cart.push(this.items.getById(this.appCount.ids[i]))};
+      this.getPaint$.subscribe(data => {
+        this.cart.push(data.filter(p => p.id == this.appCount.ids[i])[0])
+      })
 
+  }
     for (var i in this.cart) {
       this.cost = this.cost + this.cart[i].price;
     }

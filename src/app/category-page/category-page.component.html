@@ -1,12 +1,12 @@
 <div class="container div__content__margin" fxLayout="row">
   <div class="col-md-2 div__text__bold">
-    Paints
+    {{this.category}}
     <div class="div__text__green-underline div__content__pointer"
     *ngFor="let p of cat"
     [routerLink]="['/', p]">{{p}}
     </div>
   </div>
-<div class="col-md" fxLayout="row">
+<div class="col-md" fxLayout="column">
   <div
     *ngFor="let p of catPaints"
     [paint]="p">{{p.title}}

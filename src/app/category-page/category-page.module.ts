@@ -3,7 +3,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CategoryPageComponent } from './category-page.component';
-import { PaintComponent } from '../paint/paint.component';
 
 @NgModule({
   declarations: [

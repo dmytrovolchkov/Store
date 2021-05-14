@@ -1,21 +1,20 @@
-import { getReviewById } from './../review/review.action';
 import { CounterService } from './../services/counter.service';
-import { ReviewService } from './../services/reviews.service';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Paint, ItemListService } from '../services/item-list.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Review, ReviewState } from '../review/review.state';
-import { addReview, getReview, getReviewById } from '../review/review.action';
+import { addReview, getReview } from '../review/review.action';
+import { Paint, PaintState } from '../paint/paint.state';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css'],
-  //changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 
 })
 export class ItemComponent implements OnInit {
@@ -31,27 +30,20 @@ export class ItemComponent implements OnInit {
   item: Paint
   num: number
   i = 0
+  subscription: any
 
   @Select(ReviewState.getReview) getReview$!: Observable<Review[]>
-  @Select(ReviewState.getReviewById) getReviewById$!: Observable<Review[]>
+  @Select(PaintState.getPaint) getPaint$!: Observable<Paint[]>
 
   constructor(private route: ActivatedRoute,
-    private items: ItemListService,
-    private review: ReviewService,
     public http: HttpClient,
     public appCount: CounterService,
-    public store: Store) {
-
-      this.getReview$.subscribe(data => {
-      this.rev2 = data
-      console.log('rev2 ', data)
-    }
-  );
+    public store: Store,
+    private title: Title,
+    private meta: Meta) {
     }
 
   ngOnInit(): void {
-
-    this.store.dispatch(new getReview())
 
     this.form = new FormGroup({
       name: new FormControl('',
@@ -68,14 +60,19 @@ export class ItemComponent implements OnInit {
     })
 
     this.route.params.subscribe((params: Params) => {
-      this.rev = this.store.dispatch(new getReviewById(+params.id))
-      // this.rev = this.review.getByIdRev(+params.id)
-      this.item = this.items.getById(+params.id)
-      console.log('Params', this.item)
-      console.log('Params2', this.rev)
-    })
+      this.getReview$.subscribe(data => {
+        this.rev = data.filter(p => p.num == params.id)
+      })
+      this.getPaint$.subscribe(data => {
+        this.item = data.filter(p => p.id == params.id)[0]
+        this.title.setTitle(this.item.title)
+        this.meta.addTags([
+          {name: 'keywords', content: 'angular, paint, itemcomponent'},
+          {name: 'description', content: 'This item is '+this.item.title+' painted by '+this.item.author}
+         ] )
+      })
     this.i = this.rev.length;
-  }
+  })}
 
   getErrorMessage(): any {
     if (this.form.get('email').hasError('required')) {
@@ -95,9 +92,6 @@ export class ItemComponent implements OnInit {
   }
 
   addPost() {
-    this.route.params.subscribe((params: Params) => {
-      this.item = this.items.getById(+params.id)
-      console.log('Paramsssssssssss', this.item) });
       this.getReview$.subscribe(data => {
         this.rev2 = data;
         console.log('rev2222 ', this.rev2.length);
@@ -114,13 +108,5 @@ export class ItemComponent implements OnInit {
 
       this.store.dispatch(new addReview(this.post))
 
-    // this.http.post<Review>('http://localhost:3000/reviews', post)
-    //   .subscribe(data => {
-    //     console.log('Form data 2', data);
-    //     }
-    //   );
   }
-
-
-
 }

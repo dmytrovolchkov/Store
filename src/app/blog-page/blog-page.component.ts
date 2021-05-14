@@ -1,16 +1,19 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-page',
   templateUrl: './blog-page.component.html',
   styleUrls: ['./blog-page.component.css'],
-  //changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BlogPageComponent implements OnInit {
 
   inputPhone = '380XXXXXXXXX';
 
-  constructor() { }
+  constructor(private title: Title) {
+    this.title.setTitle('Blog')
+  }
 
   ngOnInit(): void {
   }
