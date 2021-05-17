@@ -9,7 +9,7 @@ import { getReview } from './review/review.action';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class AppComponent implements OnInit, OnDestroy {

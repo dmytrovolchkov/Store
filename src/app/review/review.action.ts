@@ -5,13 +5,6 @@ export class getReview {
 
 }
 
-export class getReviewById {
-  static readonly type = '[REVIEW] getReviewById'
-
-  constructor(public payload: number) {}
-
-}
-
 export class addReview {
   static readonly type = '[REVIEW] addReview'
 

@@ -1,9 +1,8 @@
-
   <div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
     <div class="col-md-3 div__text__bold">
       Bestsellerts
       <div class="div__text__green-underline div__content__pointer"
-      *ngFor="let p of cat"
+      *ngFor="let p of getCategory$ | async"
       [routerLink]="['/',p]">{{p}}
       </div>
     </div>
@@ -17,12 +16,12 @@
     <div class="col-md-3 div__text__bold">
       Top ranking paints
       <div class="div__text__green-underline div__content__pointer"
-      *ngFor="let p of cat"
+      *ngFor="let p of getCategory$ | async"
       [routerLink]="['/',p]">{{p}}
       </div>
     </div>
     <app-paint class="col-md"
-      *ngFor="let p of topPaints"
+      *ngFor="let p of getTopPaints$ | async"
       [paint]="p">
     </app-paint>
   </div>
@@ -31,12 +30,12 @@
     <div class="col-md-3 div__text__bold">
       Most popular paints
       <div class="div__text__green-underline div__content__pointer"
-      *ngFor="let p of cat"
+      *ngFor="let p of getCategory$ | async"
       [routerLink]="['/',p]">{{p}}
       </div>
     </div>
     <app-paint class="col-md"
-      *ngFor="let p of mostPaints"
+      *ngFor="let p of getMostPaints$ | async"
       [paint]="p">
     </app-paint>
   </div>

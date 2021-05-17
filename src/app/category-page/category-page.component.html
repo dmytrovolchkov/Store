@@ -1,9 +1,9 @@
 <div class="container div__content__margin" fxLayout="row">
   <div class="col-md-2 div__text__bold">
-    {{this.category}}
+    {{this.categoryRout}}
     <div class="div__text__green-underline div__content__pointer"
-    *ngFor="let p of cat"
-    [routerLink]="['/', p]">{{p}}
+    *ngFor="let p of getCategory$ | async"
+    [routerLink]="['/',p]">{{p}}
     </div>
   </div>
 <div class="col-md" fxLayout="column">

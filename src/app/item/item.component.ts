@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Review, ReviewState } from '../review/review.state';
-import { addReview, getReview } from '../review/review.action';
+import { addReview } from '../review/review.action';
 import { Paint, PaintState } from '../paint/paint.state';
 import { Meta, Title } from '@angular/platform-browser';
 
@@ -61,18 +61,20 @@ export class ItemComponent implements OnInit {
 
     this.route.params.subscribe((params: Params) => {
       this.getReview$.subscribe(data => {
-        this.rev = data.filter(p => p.num == params.id)
+        this.rev = data?.filter(p => p.num == params.id)
       })
+
       this.getPaint$.subscribe(data => {
-        this.item = data.filter(p => p.id == params.id)[0]
-        this.title.setTitle(this.item.title)
+        this.item = data?.filter(p => p.id == params.id)[0]
+        this.title.setTitle(this.item?.title)
         this.meta.addTags([
           {name: 'keywords', content: 'angular, paint, itemcomponent'},
-          {name: 'description', content: 'This item is '+this.item.title+' painted by '+this.item.author}
+          {name: 'description', content: 'This item is '+this.item?.title+' painted by '+this.item?.author}
          ] )
       })
-    this.i = this.rev.length;
-  })}
+    this.i = this.rev?.length;
+})
+}
 
   getErrorMessage(): any {
     if (this.form.get('email').hasError('required')) {
@@ -87,18 +89,13 @@ export class ItemComponent implements OnInit {
       this.form.reset()
       this.form.markAsPristine()
       this.form.markAsUntouched()
-      console.log('Form data ', formData)
     }
   }
 
   addPost() {
-      this.getReview$.subscribe(data => {
-        this.rev2 = data;
-        console.log('rev2222 ', this.rev2.length);
-      }
-    );
+    this.getReview$.subscribe(data => this.rev2 = data)
       this.post = {
-        id: this.rev2.length + 1,
+        id: this.rev2?.length + 1,
         num: this.item.id,
         name: this.todoName,
         email: this.todoEmail,

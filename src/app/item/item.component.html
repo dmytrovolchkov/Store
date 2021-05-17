@@ -1,18 +1,18 @@
 <mat-toolbar class="container line__white">
   <mat-toolbar-row>
     <div class="col-md div__text__gray"
-    >Homepage / category / <span>{{item.id}}</span></div>
+    >Homepage / category / <span>{{item?.id}}</span></div>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div fxLayout="row" class="container">
 <div class="col-md-6">
 
-    <img class="item__image" src="{{item.imageUrl}}" alt="">
+    <img class="item__image" src="{{item?.imageUrl}}" alt="">
 
   </div>
   <div class="col-md-6">
-    <h1 align="center">{{item.title}}</h1>
+    <h1 align="center">{{item?.title}}</h1>
     <mat-icon>star</mat-icon>
     <mat-icon>star</mat-icon>
     <mat-icon>star</mat-icon>
@@ -35,9 +35,9 @@
       <span>country</span>
     </div>
     <div fxLayout="column" class="col-md-2 offset-1">
-      <span>123123{{item.id}}</span>
-      <span class="div__content__nowrap">{{item.author}}</span>
-      <span>{{item.year}}</span>
+      <span>123123{{item?.id}}</span>
+      <span class="div__content__nowrap">{{item?.author}}</span>
+      <span>{{item?.year}}</span>
       <span>Ukraine</span>
     </div>
     <div fxLayout="column" class="col-md-2 offset-1">
@@ -47,9 +47,9 @@
       <span>Null</span>
     </div>
     <div fxLayout="column" class="col-md-2 offset-1">
-      <span>{{item.rating}}</span>
-      <span>{{item.sells}}</span>
-      <span>{{item.popular}}</span>
+      <span>{{item?.rating}}</span>
+      <span>{{item?.sells}}</span>
+      <span>{{item?.popular}}</span>
       <span>Null</span>
     </div>
   </div>
@@ -57,14 +57,13 @@
 <div>
   <div>
     <div class="div__content__margin box__bordered" fxLayout="row" fxLayoutAlign="space-around center">
-      <div class="col-md-4 offset-2 div__text__price">{{item.price.toFixed(2)}} USD</div>
+      <div class="col-md-4 offset-2 div__text__price">{{item?.price.toFixed(2)}} USD</div>
       <button class="col-md-3 offset-2 div__buybutton"
-      (click)="appCount.addToCart(item.id);appCount.increase()">
+      (click)="appCount.addToCart(item?.id);appCount.increase()">
         + Add to cart
       </button>
     </div>
   </div>
-
 </div>
 
 
@@ -128,17 +127,16 @@
                   type="submit"
                   [disabled]="form.invalid || form.pending">Submit form</button>
         </p>
-
       </form>
-      </div>
+    </div>
 
   </div>
   <div class="col-md-6 div__content__margin">
     <div *ngFor="let item of rev">
       <p>Reviews:</p>
-      <p>Name: {{item.name}}</p>
-      <p>Score: {{item.score}}</p>
-      <p>Comment: {{item.comment}}</p>
+      <p>Name: {{item?.name}}</p>
+      <p>Score: {{item?.score}}</p>
+      <p>Comment: {{item?.comment}}</p>
     </div>
   </div>
 </div>

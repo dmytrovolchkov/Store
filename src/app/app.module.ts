@@ -32,6 +32,7 @@ import { HomeModule } from './home/home.module';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
     CartPageModule,
     BlogPageModule,
     CategoryPageModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

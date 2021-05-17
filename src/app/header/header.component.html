@@ -53,8 +53,8 @@
     </button>
     <div class="line"></div>
     <input placeholder="Search products ..." value="">
-<mat-menu #menu="matMenu">
-  <button mat-menu-item *ngFor="let p of cat"
+<mat-menu #menu>
+  <button mat-menu-item *ngFor="let p of getCategory$ | async"
   [routerLink]="['/',p]">{{p}}</button>
 </mat-menu>
       </div>
@@ -74,10 +74,10 @@
 <div class="container line__gray" fxLayout="row" fxLayoutAlign="start center">
     <button class="div__text__bold"
     mat-button [matMenuTriggerFor]="menu1"
-            *ngFor="let p of cat">{{p}}
+            *ngFor="let p of getCategory$ | async">{{p}}
       <mat-icon>keyboard_arrow_down</mat-icon>
   </button>
-    <mat-menu #menu1="matMenu">
+    <mat-menu #menu1>
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
       <button mat-menu-item>Item 3</button>

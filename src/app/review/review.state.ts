@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { addReview, getReview} from "./review.action";
+import { addReview, getReview } from "./review.action";
 
 export interface Review {
   id: number

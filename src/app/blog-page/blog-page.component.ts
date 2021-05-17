@@ -18,7 +18,7 @@ export class BlogPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onInput(event?): any {
+  onInput(event?: { target: { value: string; }; }): any {
     this.inputPhone = event.target.value;
     event.target.value = '';
   }

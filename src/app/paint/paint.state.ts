@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { HttpClient } from '@angular/common/http';
-import { fetchPaint, getByIdPaint } from './paint.action';
+import { fetchPaint } from './paint.action';
 
 export interface Paint {
   id: number;
@@ -36,6 +36,27 @@ export class PaintState {
   @Selector()
   static getPaint(state: PaintStateModel) {
       return state.paint
+  }
+
+  @Selector()
+  static getBestPaints(state: PaintStateModel) {
+      return state.paint.sort((a, b) => (a.sells > b.sells ? -1 : 1))
+  }
+
+  @Selector()
+  static getTopPaints(state: PaintStateModel) {
+      return (state.paint.slice(0)).sort((a, b) => (a.rating < b.rating ? -1 : 1)).slice(0, 3)
+  }
+
+  @Selector()
+  static getMostPaints(state: PaintStateModel) {
+      return (state.paint.slice(0)).sort((a, b) => (a.popular > b.popular ? -1 : 1)).slice(0, 3);
+  }
+
+  @Selector()
+  static getIntervalPaints(state: PaintStateModel) {
+      const temp = state.paint.sort((a, b) => (a.sells > b.sells ? -1 : 1));
+      return temp.slice(0, 3)
   }
 
   @Action(fetchPaint)

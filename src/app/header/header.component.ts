@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css',],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class HeaderComponent implements OnInit {
@@ -20,20 +20,13 @@ export class HeaderComponent implements OnInit {
   @Select(CategoryState.getCategory) getCategory$!: Observable<String[]>
 
   constructor(public count: CounterService,
-    private router: Router,
-    private store: Store) {
+    private router: Router) {
 
-      this.getCategory$.subscribe(data => {
-        this.cat = data
-        console.log('Category ', this.cat)
-      })
   }
 
   @Input() deviceXs: boolean;
 
   ngOnInit(): void {
-
-    // this.store.dispatch(new getCategory())
 
   }
 
