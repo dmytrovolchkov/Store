@@ -37,4 +37,5 @@ describe('CategoryPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

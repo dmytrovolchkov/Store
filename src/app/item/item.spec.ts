@@ -40,4 +40,18 @@ describe('ItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create form with 4 controls', () => {
+    expect(component.form.contains('name')).toBeTruthy()
+    expect(component.form.contains('email')).toBeTruthy()
+    expect(component.form.contains('score')).toBeTruthy()
+    expect(component.form.contains('comment')).toBeTruthy()
+  })
+
+  it('should mark as invalid if empty', () => {
+    const control = component.form.get('name')
+    control.setValue('')
+    expect(control.valid).toBeFalsy()
+  });
+
 });

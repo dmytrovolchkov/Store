@@ -15,7 +15,6 @@ import { Title } from '@angular/platform-browser';
 export class CategoryPageComponent implements OnInit {
 
   catPaints: Paint[]
-  cat: any
   categoryRout: string
 
   @Select(CategoryState.getCategory) getCategory$!: Observable<String[]>

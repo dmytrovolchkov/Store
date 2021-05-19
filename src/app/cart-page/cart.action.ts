@@ -3,9 +3,9 @@ export class getCart {
 
 }
 
-// export class addToCart {
-//   static readonly type = '[CART] addToCart';
+export class addToCart {
+  static readonly type = '[CART] addToCart';
 
-//   constructor(public payload: number) {}
+  constructor(public payload: number) {}
 
-// }
+}

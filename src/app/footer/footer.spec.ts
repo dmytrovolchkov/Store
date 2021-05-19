@@ -21,4 +21,10 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set the tags', () => {
+    const result = component.tags
+    expect(result).toContain('Fish')
+  })
+
 });

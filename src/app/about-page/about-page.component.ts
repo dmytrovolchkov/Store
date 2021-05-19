@@ -9,7 +9,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class AboutPageComponent implements OnInit {
 
-  constructor(private title: Title) {
+  constructor(public title: Title) {
     this.title.setTitle('About')
   }
 

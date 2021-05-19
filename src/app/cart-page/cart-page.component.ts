@@ -4,7 +4,7 @@ import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Paint, PaintState } from '../paint/paint.state';
 import { CounterService } from '../services/counter.service';
-import { CartState, CartStateModel } from './cart.state';
+import { CartState } from './cart.state';
 
 @Component({
   selector: 'app-cart-page',
@@ -23,7 +23,8 @@ export class CartPageComponent implements OnInit {
   @Select(CartState.getCart) getCart$!: Observable<number[]>
 
   constructor(public appCount: CounterService,
-    private title: Title) {
+    private title: Title,
+    public store: Store) {
       this.title.setTitle('Cart')
     }
 
@@ -31,7 +32,6 @@ export class CartPageComponent implements OnInit {
 
     this.getCart$.subscribe(data => {
       this.ids = data
-      console.log('sadASD', this.ids)
     })
     for (var i in this.ids) {
       this.getPaint$.subscribe(data => {

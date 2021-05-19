@@ -1,9 +1,27 @@
+<div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
+  <div class="col-md-3 div__text__bold">
+    Category menu
+    <div class="div__text__green-underline div__content__pointer"
+    *ngFor="let p of getCategory$ | async"
+    [routerLink]="['/',p]">{{p}}
+    </div>
+    <div fxLayoutAlign="center center" class="div__content__grey-button div__text__bold">
+      More categories<mat-icon>keyboard_arrow_right</mat-icon>
+    </div>
+  </div>
+  <div class="col-md div__content__banner"></div>
+  <div class="col-md div__content__banner"></div>
+</div>
+
   <div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
     <div class="col-md-3 div__text__bold">
       Bestsellerts
       <div class="div__text__green-underline div__content__pointer"
       *ngFor="let p of getCategory$ | async"
       [routerLink]="['/',p]">{{p}}
+      </div>
+      <div fxLayoutAlign="center center" class="div__content__grey-button div__text__bold">
+        More categories<mat-icon>keyboard_arrow_right</mat-icon>
       </div>
     </div>
     <app-paint class="col-md"
@@ -19,6 +37,9 @@
       *ngFor="let p of getCategory$ | async"
       [routerLink]="['/',p]">{{p}}
       </div>
+      <div fxLayoutAlign="center center" class="div__content__grey-button div__text__bold">
+        More categories<mat-icon>keyboard_arrow_right</mat-icon>
+      </div>
     </div>
     <app-paint class="col-md"
       *ngFor="let p of getTopPaints$ | async"
@@ -32,6 +53,9 @@
       <div class="div__text__green-underline div__content__pointer"
       *ngFor="let p of getCategory$ | async"
       [routerLink]="['/',p]">{{p}}
+      </div>
+      <div fxLayoutAlign="center center" class="div__content__grey-button div__text__bold">
+        More categories<mat-icon>keyboard_arrow_right</mat-icon>
       </div>
     </div>
     <app-paint class="col-md"

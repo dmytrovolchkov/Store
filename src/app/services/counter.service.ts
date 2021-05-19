@@ -12,11 +12,4 @@ export class CounterService {
   console.log('Counter: ', this.counter);
   }
 
-  addToCart(p): any {
-    if (!this.ids.includes(p)) {
-    this.ids.push(p);}
-    console.log('Cart: ', this.ids)
-  }
-
 }
-

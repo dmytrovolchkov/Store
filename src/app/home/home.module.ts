@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
@@ -20,6 +21,7 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     FlexLayoutModule,
     MatButtonModule,
+    MatIconModule
   ],
   exports: [RouterModule]
 })

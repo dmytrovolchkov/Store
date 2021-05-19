@@ -1,4 +1,4 @@
-import { browser, logging } from 'protractor';
+import { browser, by, logging } from 'protractor';
 import { AppPage } from './app.po';
 
 describe('workspace-project App', () => {
@@ -8,9 +8,14 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', async () => {
-    await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('DZofPaintings app is running!');
+  it('Should navigate Home', async () => {
+    await page.navigateHome()
+    expect()
+  });
+
+  it('Should navigate Paint', async () => {
+    await page.navigatePaint()
+    expect()
   });
 
   afterEach(async () => {

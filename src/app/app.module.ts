@@ -33,6 +33,7 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { RouterModule } from '@angular/router';
+import { CartState } from './cart-page/cart.state';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { RouterModule } from '@angular/router';
     NgxsModule.forRoot([
       PaintState,
       CategoryState,
-      ReviewState
+      ReviewState,
+      CartState
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
@@ -73,7 +75,7 @@ import { RouterModule } from '@angular/router';
     CartPageModule,
     BlogPageModule,
     CategoryPageModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -35,6 +35,25 @@
       white-space: nowrap;
     }
 
+    &__grey-button {
+      position: relative;
+      width: 179px;
+      height: 48px;
+      left: 0px;
+      top: 7rem;
+      background: #F5F5F5;
+      border-radius: 12px;
+    }
+
+    &__banner {
+      position: relative;
+      width: 100px;
+      height: 310px;
+      margin: 16px;
+      background: #F4F8EC;
+      border-radius: 12px;
+    }
+
   }
   &__text {
     font-family: Open Sans, sans-serif;

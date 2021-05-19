@@ -59,7 +59,7 @@
     <div class="div__content__margin box__bordered" fxLayout="row" fxLayoutAlign="space-around center">
       <div class="col-md-4 offset-2 div__text__price">{{item?.price.toFixed(2)}} USD</div>
       <button class="col-md-3 offset-2 div__buybutton"
-      (click)="appCount.addToCart(item?.id);appCount.increase()">
+      (click)="appCount.increase()">
         + Add to cart
       </button>
     </div>

@@ -1,6 +1,7 @@
 // import { addToCart } from './../cart-page/cart.action';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
+import { addToCart } from '../cart-page/cart.action';
 import { CounterService } from '../services/counter.service';
 import { Paint } from './paint.state';
 
@@ -23,6 +24,7 @@ export class PaintComponent implements OnInit {
   }
   onBuy(): any {
     this.bought = 'In basket'
+    this.store.dispatch(new addToCart(this.paint?.id))
     // this.store.dispatch(new addToCart(this.paint?.id))
   }
 
