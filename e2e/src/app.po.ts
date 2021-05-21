@@ -10,4 +10,8 @@ export class AppPage {
     return browser.get('/home/1');
   }
 
+  async buyItem() {
+    return browser.driver.findElement(by.css('.div__buybutton'))
+  }
+
 }

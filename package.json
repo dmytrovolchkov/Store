@@ -24,6 +24,7 @@
     "@ngxs/devtools-plugin": "^3.7.1",
     "@ngxs/logger-plugin": "^3.7.1",
     "@ngxs/store": "^3.7.1",
+    "ng-animate": "^1.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

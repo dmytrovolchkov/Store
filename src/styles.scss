@@ -5,6 +5,10 @@
       margin-top: 3rem;
     }
 
+    &__margin-bottom {
+      margin-bottom: 1.5rem;
+    }
+
     &__margin-right {
       margin-right: 2rem;
     }
@@ -40,17 +44,33 @@
       width: 179px;
       height: 48px;
       left: 0px;
-      top: 7rem;
+      top: 5rem;
       background: #F5F5F5;
       border-radius: 12px;
     }
 
     &__banner {
       position: relative;
-      width: 100px;
-      height: 310px;
-      margin: 16px;
-      background: #F4F8EC;
+      width: 420px;
+      height: 280px;
+      margin-left: 4rem;
+      background: url(../src/assets/Banner.png) center/105%;
+      border-radius: 12px;
+    }
+
+    &__green-button {
+      position: absolute;
+      width: 163px;
+      height: 47px;
+      left: 32px;
+      bottom: 32px;
+      border: 2px solid #92C064;
+      box-sizing: border-box;
+      border-radius: 12px;
+    }
+
+    &__item-image {
+      width: 500px;
       border-radius: 12px;
     }
 
@@ -68,16 +88,43 @@
       font-size: 16px;
       line-height: 22px;
       color: #151515;
-      flex: none;
-      order: 0;
-      flex-grow: 0;
       margin: 4px 0;
     }
 
     &__simple {
       font-family: Open Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
       font-size: 12px;
-      line-height: 16px;
+      color: #151515;
+    }
+
+    &__simple-black {
+      font-family: Open Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 19px;
+      color: #151515;
+      margin-bottom: 0.5rem;
+    }
+
+    &__simple-gray {
+      font-family: Open Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 19px;
+      color: #A9A9A9;
+      margin-bottom: 0.5rem;
+    }
+
+    &__simple-big {
+      font-family: Open Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 17px;
+      line-height: 23px;
       color: #151515;
     }
 
@@ -88,14 +135,21 @@
       line-height: 22px;
     }
 
+    &__big {
+      font-family: Poppins, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+    }
+
     &__gray {
       font-family: Open Sans, sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 12px;
-      line-height: 16px;
       color: #A9A9A9;
     }
+
 
     &__green {
       font-family: Open Sans, sans-serif;
@@ -103,6 +157,32 @@
       font-size: 12px;
       line-height: 16px;
       color: #6A983C;
+    }
+
+    &__subfocus {
+      font-family: Poppins, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 18px;
+      color: #6A983C;
+      position: absolute;
+      left: 32px;
+      top: 48px;
+      margin: 8px 0px;
+    }
+
+    &__heading {
+      font-family: Poppins, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 33px;
+      color: #151515;
+      position: absolute;
+      left: 32px;
+      top: 74px;
+      margin: 8px 0px;
     }
 
     &__green-underline {
@@ -222,6 +302,7 @@ background: #FFFFFF;
 
   &__gray {
     height: 55px;
+    background-color: #F9F9F9;
   }
 
   &__white {
@@ -235,12 +316,6 @@ background: #FFFFFF;
     height: 130px;
   }
 
-}
-
-.item {
-  &__image {
-    width: 500px;
-  }
 }
 
 .ng-tooltip {
@@ -317,4 +392,40 @@ li.active a {
   font-weight: bold;
   color: #333333;
   cursor: default;
+}
+
+
+.mat-badge-content {
+  background: #E6704B;
+  color: #FFF;
+}
+
+.mat-badge-content {
+  background: #E6704B;
+  color: #FFF;
+}
+
+.mat-icon-star {
+  color: #FDBC15;
+}
+
+.mat-icon-star-gray {
+  color: #D1D1D1;
+}
+
+.mat-icon-favourites {
+  color: #E6704B
+}
+
+.mat-tab-label {
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  color: #151515;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+  background: #6A983C;
+  height: 1px;
 }

@@ -53,6 +53,7 @@
     </button>
     <div class="line"></div>
     <input placeholder="Search products ..." value="">
+    <mat-icon>search</mat-icon>
 <mat-menu #menu>
   <button mat-menu-item *ngFor="let p of getCategory$ | async"
   [routerLink]="['/',p]">{{p}}</button>
@@ -66,7 +67,8 @@
       <div class="col-md-1"
       [appTooltip]="count.counter+' items in the basket'">
       <button mat-flat-button [routerLink]="['/cart']">
-        <mat-icon>shopping_cart</mat-icon>
+        <mat-icon matBadge={{count.counter}} matBadgePosition="before below"
+        >shopping_cart</mat-icon>
       </button>
     </div>
 </div>

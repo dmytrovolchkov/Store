@@ -1,146 +1,171 @@
 <mat-toolbar class="container line__white">
   <mat-toolbar-row>
     <div class="col-md div__text__gray"
-    >Homepage / category / <span>{{item?.id}}</span></div>
+    >Home / <span>{{item?.category}}</span> / <span>{{item?.title}}</span></div>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div fxLayout="row" class="container">
 <div class="col-md-6">
 
-    <img class="item__image" src="{{item?.imageUrl}}" alt="">
+    <img class="div__content__item-image" src="{{item?.imageUrl}}" alt="">
 
   </div>
   <div class="col-md-6">
-    <h1 align="center">{{item?.title}}</h1>
-    <mat-icon>star</mat-icon>
-    <mat-icon>star</mat-icon>
-    <mat-icon>star</mat-icon>
-    <mat-icon>star_half</mat-icon>
-    <mat-icon>star_border</mat-icon>
-    {{i}} customers reviews
-    <p></p>
-    <p>
+    <div class="div__text__big div__content__margin-bottom">{{item?.title}}</div>
+    <div fxLayout="row" fxLayoutAlign=" center" class="div__content__margin-bottom">
+    <mat-icon class="mat-icon-star">star</mat-icon>
+    <mat-icon class="mat-icon-star">star</mat-icon>
+    <mat-icon class="mat-icon-star">star</mat-icon>
+    <mat-icon class="mat-icon-star">star_half</mat-icon>
+    <mat-icon class="mat-icon-star-gray">star_border</mat-icon>
+    <div class="div__text__gray">({{i}} customers reviews)</div>
+  </div>
+    <div class="div__text__simple-big div__content__margin-bottom">
       Carrots from Tomissy Farm are one of the best on the market.
       Tomisso and his family are giving a full love to his Bio products.
       Tomisso’s carrots are growing on the fields naturally.
-    </p>
+    </div>
 
-
-  <div fxLayout="row">
+  <div fxLayout="row" class="div__content__margin-bottom">
     <div fxLayout="column" class="col-md-2">
-      <span>SKU</span>
-      <span>author</span>
-      <span>year</span>
-      <span>country</span>
+      <div class="div__text__simple-gray">SKU:</div>
+      <div class="div__text__simple-gray">Author:</div>
+      <div class="div__text__simple-gray">Year:</div>
+      <div class="div__text__simple-gray">Country:</div>
     </div>
     <div fxLayout="column" class="col-md-2 offset-1">
-      <span>123123{{item?.id}}</span>
-      <span class="div__content__nowrap">{{item?.author}}</span>
-      <span>{{item?.year}}</span>
-      <span>Ukraine</span>
+      <div class="div__text__simple-black">123123{{item?.id}}</div>
+      <div class="div__text__simple-black div__content__nowrap">{{item?.author}}</div>
+      <div class="div__text__simple-black">{{item?.year}}</div>
+      <div class="div__text__simple-black">Ukraine</div>
     </div>
     <div fxLayout="column" class="col-md-2 offset-1">
-      <span>Rating</span>
-      <span>Sells</span>
-      <span>Popular</span>
-      <span>Null</span>
+      <div class="div__text__simple-gray">Rating:</div>
+      <div class="div__text__simple-gray">Sells:</div>
+      <div class="div__text__simple-gray">Popular:</div>
+      <div class="div__text__simple-gray">Delivery:</div>
     </div>
     <div fxLayout="column" class="col-md-2 offset-1">
-      <span>{{item?.rating}}</span>
-      <span>{{item?.sells}}</span>
-      <span>{{item?.popular}}</span>
-      <span>Null</span>
+      <div class="div__text__simple-black">{{item?.rating}}</div>
+      <div class="div__text__simple-black">{{item?.sells}}</div>
+      <div class="div__text__simple-black">{{item?.popular}}</div>
+      <div class="div__text__simple-black">1-3 days</div>
     </div>
   </div>
 
 <div>
   <div>
-    <div class="div__content__margin box__bordered" fxLayout="row" fxLayoutAlign="space-around center">
+    <div class="box__bordered div__content__margin-bottom" fxLayout="row"
+    fxLayoutAlign="space-around center">
       <div class="col-md-4 offset-2 div__text__price">{{item?.price.toFixed(2)}} USD</div>
-      <button class="col-md-3 offset-2 div__buybutton"
-      (click)="appCount.increase()">
+      <button class="col-md-3 offset-2 div__buybutton" [@box]="boxState"
+      (click)="appCount.increase(); animate()">
         + Add to cart
       </button>
     </div>
   </div>
 </div>
 
-
-<div class="container" fxLayout="row" >
-  <div class="col-md-6">
-    <div class="container div__content__margin" fxLayoutAlign="center center">
-      <form class="example-container" [formGroup]="form" (ngSubmit)="submit()">
-        <p>
-        <mat-form-field hintLabel="From 3 to 20 characters" appearance="fill">
-          <mat-label>Enter your name</mat-label>
-          <input matInput
-                 #input minlength="3"
-                 maxlength="20"
-                 placeholder="Name"
-                 formControlName="name"
-                 required
-                 [(ngModel)]="todoName">
-          <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
-        </mat-form-field>
-        </p>
-        <p>
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com"
-                 formControlName="email"
-                 required
-                 [(ngModel)]="todoEmail">
-          <mat-error *ngIf="form.get('email').invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-        </p>
-        <p>
-        <mat-form-field appearance="fill">
-          <mat-label>Enter score</mat-label>
-          <mat-select
-            formControlName="score"
-            required
-            [(ngModel)]="todoScore">
-            <mat-option value="1">1</mat-option>
-            <mat-option value="2">2</mat-option>
-            <mat-option value="3">3</mat-option>
-            <mat-option value="4">4</mat-option>
-            <mat-option value="5">5</mat-option>
-          </mat-select>
-          <mat-hint align="end">From 1 to 5</mat-hint>
-        </mat-form-field>
-        </p>
-        <p>
-          <mat-form-field hintLabel="Max 1000 characters" appearance="fill">
-            <mat-label>Enter your comment</mat-label>
-            <label>
-              <textarea matInput
-                        #text maxlength="1000"
-                        formControlName="comment"
-                        [(ngModel)]="todoComment"></textarea>
-            </label>
-            <mat-hint align="end">{{text.value?.length || 0}}/1000</mat-hint>
-          </mat-form-field>
-        </p>
-        <p>
-          <button mat-raised-button (click)="addPost()"
-                  type="submit"
-                  [disabled]="form.invalid || form.pending">Submit form</button>
-        </p>
-      </form>
-    </div>
-
+<div fxLayout="row" fxLayoutAlign=" center"
+class="div__content__margin-bottom">
+  <div fxLayout="row" class="col-md-5">
+    <mat-icon class="mat-icon-favourites">favorite_border</mat-icon>
+    <div class="div__text__bold">Add to my wishlist</div>
   </div>
-  <div class="col-md-6 div__content__margin">
-    <div *ngFor="let item of rev">
-      <p>Reviews:</p>
-      <p>Name: {{item?.name}}</p>
-      <p>Score: {{item?.score}}</p>
-      <p>Comment: {{item?.comment}}</p>
-    </div>
+  <div fxLayout="row" class="col-md-5">
+    <mat-icon class="mat-icon-favourites">compare</mat-icon>
+    <div class="div__text__bold">Compare</div>
   </div>
 </div>
 
+<mat-tab-group>
+  <mat-tab label="Description">
+    <div class="div__text__bold div__content__margin div__content__margin-bottom">Origins</div>
+    <div class="div__text__simple-black div__content__margin-bottom">We work hard to ensure that the fruit and vegetables we sell are fresh and high in quality. If we don’t grow them ourselves, we source them from carefully chosen suppliers, preferring to buy locally whenever possible.</div>
+    <div class="div__text__bold div__content__margin div__content__margin-bottom">How to Cook</div>
+    <div class="div__text__simple-black div__content__margin-bottom">From roasts, salads and soups to casseroles and cakes, Carrots will lend sweetness, texture and colour to an enormous number of recipes.</div>
+    <div class="div__text__bold div__content__margin div__content__margin-bottom">Full of Vitamins!</div>
+    <div></div>
+  </mat-tab>
+  <mat-tab label="Reviews">
 
+    <div class="col-md/12 div__content__margin">
+      <div *ngFor="let item of rev">
+        <p>Reviews:</p>
+        <p>Name: {{item?.name}}</p>
+        <p>Score: {{item?.score}}</p>
+        <p>Comment: {{item?.comment}}</p>
+      </div>
+    </div>
+
+    <div class="container" fxLayout="row" >
+      <div class="col-md-12">
+        <div class="container div__content__margin" fxLayoutAlign="center center">
+          <form class="example-container" [formGroup]="form" (ngSubmit)="submit()">
+            <p>
+            <mat-form-field hintLabel="From 3 to 20 characters" appearance="fill">
+              <mat-label>Enter your name</mat-label>
+              <input matInput
+                     #input minlength="3"
+                     maxlength="20"
+                     placeholder="Name"
+                     formControlName="name"
+                     required
+                     [(ngModel)]="todoName">
+              <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
+            </mat-form-field>
+            </p>
+            <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com"
+                     formControlName="email"
+                     required
+                     [(ngModel)]="todoEmail">
+              <mat-error *ngIf="form.get('email').invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            </p>
+            <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Enter score</mat-label>
+              <mat-select
+                formControlName="score"
+                required
+                [(ngModel)]="todoScore">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+                <mat-option value="5">5</mat-option>
+              </mat-select>
+              <mat-hint align="end">From 1 to 5</mat-hint>
+            </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field hintLabel="Max 1000 characters" appearance="fill">
+                <mat-label>Enter your comment</mat-label>
+                <label>
+                  <textarea matInput
+                            #text maxlength="1000"
+                            formControlName="comment"
+                            [(ngModel)]="todoComment"></textarea>
+                </label>
+                <mat-hint align="end">{{text.value?.length || 0}}/1000</mat-hint>
+              </mat-form-field>
+            </p>
+            <p>
+              <button mat-raised-button (click)="addPost()"
+                      type="submit"
+                      [disabled]="form.invalid || form.pending">Submit form</button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="Questions"> Content 3 </mat-tab>
+</mat-tab-group>
   </div>
   </div>

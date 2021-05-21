@@ -9,16 +9,29 @@ import { Review, ReviewState } from '../review/review.state';
 import { addReview } from '../review/review.action';
 import { Paint, PaintState } from '../paint/paint.state';
 import { Meta, Title } from '@angular/platform-browser';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css'],
+  animations: [
+    trigger('box', [
+      state('start', style({background: '#6A983C'})),
+      state('end', style({background: '#6A983C'})),
+      transition('* <=> end', [
+        style({background: 'green', transform: 'scale(1.2)'}),
+        animate('0.05s', style({background: '6A983C'})),
+        animate(50)
+      ])
+    ])
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 
 })
 export class ItemComponent implements OnInit {
 
+  boxState = 'start'
   form: FormGroup
   post: Review
   rev: Review[]
@@ -104,6 +117,8 @@ export class ItemComponent implements OnInit {
       };
 
       this.store.dispatch(new addReview(this.post))
-
+  }
+  animate() {
+    this.boxState = 'end'
   }
 }

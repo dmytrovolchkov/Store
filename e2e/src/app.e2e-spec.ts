@@ -18,6 +18,11 @@ describe('workspace-project App', () => {
     expect()
   });
 
+  it('Should buy', async () => {
+    (await page.buyItem()).click();
+    expect()
+  });
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);

@@ -22,6 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './footer/footer.component';
@@ -34,6 +35,8 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { RouterModule } from '@angular/router';
 import { CartState } from './cart-page/cart.state';
+import { MatBadgeModule } from '@angular/material/badge';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +67,9 @@ import { CartState } from './cart-page/cart.state';
     ReactiveFormsModule,
     MatOptionModule,
     MatSelectModule,
+    MatBadgeModule,
     MatMenuModule,
+    MatTabsModule,
     HttpClientModule,
     AppRoutingModule,
     AboutPageModule,

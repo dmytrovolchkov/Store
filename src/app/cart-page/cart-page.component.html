@@ -18,18 +18,21 @@
 <div class="col-md div__text__bold">{{item.title}}
 <div fxLayout="row">
 
-  <div class="div__text__simple">Author:    <br>Year:    </div>
+  <div class="div__text__gray">Author:    <br>Year:    </div>
   <div class="div__text__simple">{{item.author}}<br>{{item.year}}</div>
 </div>
 </div>
 </div>
 
-<div class="container col-md-1 offset-8" fxLayout="row">
-<mat-icon inline="true">star</mat-icon>
-<mat-icon inline="true">star</mat-icon>
-<mat-icon inline="true">star</mat-icon>
-<mat-icon inline="true">star_half</mat-icon>
-<mat-icon inline="true">star_border</mat-icon>
+<div class="container" fxLayout="row">
+  <div class="col-md-2 offset-8">Wishlist</div>
+  <div class="col-md-1" fxLayout="row">
+<mat-icon class="mat-icon-star" inline="true">star</mat-icon>
+<mat-icon class="mat-icon-star" inline="true">star</mat-icon>
+<mat-icon class="mat-icon-star" inline="true">star</mat-icon>
+<mat-icon class="mat-icon-star" inline="true">star_half</mat-icon>
+<mat-icon  class="mat-icon-star-gray"inline="true">star_border</mat-icon>
+</div>
 </div>
 
 <div class="container col-md-1 offset-8 div__text__price" fxLayout="row">
@@ -40,9 +43,6 @@
   <div class="col-md-4 offset-8 line"></div>
 </div>
 </div>
-
-
-
 
 <div class="container div__content__margin">
   <div class="col-md-4 offset-8">

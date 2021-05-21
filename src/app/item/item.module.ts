@@ -11,6 +11,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ItemComponent } from './item.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatTabsModule,
     FlexLayoutModule,
     FormsModule,
     CommonModule,

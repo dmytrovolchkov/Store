@@ -1,5 +1,5 @@
 <div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
-  <div class="col-md-3 div__text__bold">
+  <div class="col-md-2 div__text__bold">
     Category menu
     <div class="div__text__green-underline div__content__pointer"
     *ngFor="let p of getCategory$ | async"
@@ -9,12 +9,32 @@
       More categories<mat-icon>keyboard_arrow_right</mat-icon>
     </div>
   </div>
-  <div class="col-md div__content__banner"></div>
-  <div class="col-md div__content__banner"></div>
+  <div class="col-md div__content__banner">
+    <div class="div__text__subfocus">
+      Banner subfocus
+    </div>
+    <div class="div__text__heading">
+      Space for heading
+    </div>
+    <div fxLayoutAlign="center center" class="div__content__green-button div__text__bold">
+      Read receipes<mat-icon>keyboard_arrow_right</mat-icon>
+    </div>
+  </div>
+  <div class="col-md div__content__banner">
+    <div class="div__text__subfocus">
+      Banner subfocus
+    </div>
+    <div class="div__text__heading">
+      Space for heading
+    </div>
+    <div fxLayoutAlign="center center" class="div__content__green-button div__text__bold">
+      Read receipes<mat-icon>keyboard_arrow_right</mat-icon>
+    </div>
+  </div>
 </div>
 
   <div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
-    <div class="col-md-3 div__text__bold">
+    <div class="col-md-2 div__text__bold">
       Bestsellerts
       <div class="div__text__green-underline div__content__pointer"
       *ngFor="let p of getCategory$ | async"
@@ -24,14 +44,14 @@
         More categories<mat-icon>keyboard_arrow_right</mat-icon>
       </div>
     </div>
-    <app-paint class="col-md"
+    <app-paint class="col-md-3"
       *ngFor="let p of interBest"
     [paint]="p">
     </app-paint>
   </div>
 
   <div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
-    <div class="col-md-3 div__text__bold">
+    <div class="col-md-2 div__text__bold">
       Top ranking paints
       <div class="div__text__green-underline div__content__pointer"
       *ngFor="let p of getCategory$ | async"
@@ -41,14 +61,14 @@
         More categories<mat-icon>keyboard_arrow_right</mat-icon>
       </div>
     </div>
-    <app-paint class="col-md"
+    <app-paint class="col-md-3"
       *ngFor="let p of getTopPaints$ | async"
       [paint]="p">
     </app-paint>
   </div>
 
   <div class="container div__content__margin" fxLayout="row" fxLayoutAlign="space-between start">
-    <div class="col-md-3 div__text__bold">
+    <div class="col-md-2 div__text__bold">
       Most popular paints
       <div class="div__text__green-underline div__content__pointer"
       *ngFor="let p of getCategory$ | async"
@@ -58,7 +78,7 @@
         More categories<mat-icon>keyboard_arrow_right</mat-icon>
       </div>
     </div>
-    <app-paint class="col-md"
+    <app-paint class="col-md-3"
       *ngFor="let p of getMostPaints$ | async"
       [paint]="p">
     </app-paint>
